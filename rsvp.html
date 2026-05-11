@@ -184,8 +184,7 @@
 
     // ===== RSVP form =====
 
-    // 👇 Paste the Web App URL from the Google Apps Script deployment here.
-    const RSVP_ENDPOINT = 'SCRIPT_URL_HERE';
+    const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzAE0Pn5gFzno1qEbyvBy5L80ZSkTFkEtyrcGVsNJFUdask2MBL5FzUpfy6wY2OA45Z/exec';
 
     const DIET_OPTIONS = [
       { id: 'vegetarian',       label: 'Vegetarian' },
@@ -295,7 +294,7 @@
       const err = validate(data);
       if (err) { showStatus('error', err); return; }
 
-      if (RSVP_ENDPOINT === 'https://script.google.com/macros/s/AKfycbzAE0Pn5gFzno1qEbyvBy5L80ZSkTFkEtyrcGVsNJFUdask2MBL5FzUpfy6wY2OA45Z/exec') {
+      if (RSVP_ENDPOINT === 'SCRIPT_URL_HERE') {
         showStatus('error', 'RSVP endpoint not configured yet. (Setup pending.)');
         return;
       }
