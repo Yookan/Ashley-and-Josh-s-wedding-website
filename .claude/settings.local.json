@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where magick:*)",
+      "Bash(where convert:*)",
+      "Bash(where ffmpeg:*)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(python -c \"import pillow_heif; print\\(''pillow_heif OK''\\)\")",
+      "Bash(python -c \":*)",
+      "Bash(find C:UserswynnoAppDataLocalTemp -maxdepth 2 -name *.jpg -o -name *.png -o -name *.jpeg)",
+      "Bash(find C:Userswynno -maxdepth 3 -name *.jpg -newer 'C:\\\\Users\\\\wynno\\\\Documents\\\\Wedding site\\\\images\\\\IMG_9966.jpg')",
+      "WebSearch",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:www.visitbuckscounty.com)",
+      "Bash(grep -i -E '\\\\.\\(jpg|jpeg|png\\)$')"
+    ]
+  }
+}

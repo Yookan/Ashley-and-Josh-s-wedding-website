@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 140" fill="none">
+  <!-- Medieval Marginalia Dragon - stylized manuscript illustration -->
+  <g opacity="0.35">
+    <!-- Long serpentine body -->
+    <path d="M155 52 C148 48, 140 42, 130 40
+             C118 37, 108 42, 98 45
+             C88 48, 78 44, 68 42
+             C58 40, 50 44, 45 50
+             C40 56, 38 64, 42 72
+             C46 80, 56 82, 66 78
+             C72 75, 74 68, 70 62"
+          fill="none" stroke="#8b1a1a" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Body fill with scales suggestion -->
+    <path d="M155 52 C148 48, 140 42, 130 40
+             C118 37, 108 42, 98 45
+             C88 48, 78 44, 68 42
+             C58 40, 50 44, 45 50
+             C40 56, 38 64, 42 72
+             C46 80, 56 82, 66 78
+             C72 75, 74 68, 70 62"
+          fill="none" stroke="rgba(139, 26, 26, 0.1)" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Scale texture along body -->
+    <path d="M145 46 C143 44, 140 45, 141 48" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M135 41 C133 39, 130 40, 131 43" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M122 40 C120 38, 117 39, 118 42" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M110 43 C108 41, 105 42, 106 45" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M100 46 C98 44, 95 45, 96 48" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M88 45 C86 43, 83 44, 84 47" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M76 43 C74 41, 71 42, 72 45" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M62 44 C60 42, 57 44, 58 47" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M52 50 C50 48, 47 50, 48 53" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+
+    <!-- Head - elongated snout, medieval style -->
+    <path d="M155 52 C158 50, 164 48, 170 50
+             C174 52, 175 56, 172 58
+             C168 60, 162 58, 158 56
+             C156 55, 155 53, 155 52Z"
+          fill="rgba(139, 26, 26, 0.15)" stroke="#8b1a1a" stroke-width="2"/>
+
+    <!-- Upper jaw detail -->
+    <path d="M170 50 C172 48, 176 48, 178 50"
+          stroke="#8b1a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Teeth -->
+    <path d="M172 54 L174 57 L176 54" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+    <path d="M168 55 L169 58" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+
+    <!-- Eye - classic medieval dot with circle -->
+    <circle cx="164" cy="51" r="2.5" fill="#8b1a1a"/>
+    <circle cx="164" cy="51" r="1" fill="#b8860b"/>
+
+    <!-- Ear/horn frill -->
+    <path d="M158 48 L154 40 L156 46" fill="#8b1a1a" opacity="0.4" stroke="#8b1a1a" stroke-width="1"/>
+    <path d="M161 47 L160 38 L162 45" fill="#8b1a1a" opacity="0.3" stroke="#8b1a1a" stroke-width="1"/>
+
+    <!-- Nostril smoke/fire breath - whimsical curls -->
+    <path d="M176 49 C180 46, 178 42, 174 40
+             C170 38, 172 34, 176 33"
+          stroke="#b8860b" stroke-width="1" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M177 51 C182 50, 180 45, 176 44"
+          stroke="#b8860b" stroke-width="0.8" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+    <!-- Wing - large decorative manuscript style -->
+    <path d="M130 40 C128 28, 118 15, 108 10
+             C114 12, 120 8, 126 5
+             C128 12, 124 20, 132 18
+             C138 14, 142 6, 148 4
+             C146 14, 140 24, 150 22
+             C155 18, 158 12, 162 10
+             C160 20, 154 30, 155 38
+             C155 42, 150 46, 148 48"
+          fill="rgba(139, 26, 26, 0.06)" stroke="#8b1a1a" stroke-width="1.8"/>
+
+    <!-- Wing membrane ribs -->
+    <path d="M130 40 C126 28, 118 18, 112 12" stroke="#8b1a1a" stroke-width="0.7" fill="none"/>
+    <path d="M135 38 C132 26, 128 16, 130 8" stroke="#8b1a1a" stroke-width="0.7" fill="none"/>
+    <path d="M142 42 C140 30, 140 20, 145 10" stroke="#8b1a1a" stroke-width="0.7" fill="none"/>
+    <path d="M148 45 C148 34, 150 26, 156 16" stroke="#8b1a1a" stroke-width="0.7" fill="none"/>
+
+    <!-- Belly detail -->
+    <path d="M48 58 C46 62, 44 66, 44 70" stroke="#8b1a1a" stroke-width="0.6" fill="none"/>
+    <path d="M52 56 C50 60, 48 64, 48 68" stroke="#8b1a1a" stroke-width="0.6" fill="none"/>
+    <path d="M56 54 C54 58, 53 62, 54 66" stroke="#8b1a1a" stroke-width="0.6" fill="none"/>
+
+    <!-- Tail - long curling spiral, very marginalia -->
+    <path d="M70 62 C64 56, 55 52, 45 55
+             C35 58, 28 52, 22 48
+             C16 44, 10 48, 8 54
+             C6 60, 10 66, 16 64
+             C22 62, 18 56, 14 56
+             C10 56, 10 62, 14 62"
+          fill="none" stroke="#8b1a1a" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Tail spade tip -->
+    <path d="M14 62 C10 58, 4 60, 6 65 C8 68, 4 70, 2 68"
+          fill="rgba(139, 26, 26, 0.3)" stroke="#8b1a1a" stroke-width="1.2"/>
+
+    <!-- Front legs - stubby medieval style -->
+    <path d="M58 72 L54 88 C52 92, 48 92, 48 88 L50 84"
+          fill="none" stroke="#8b1a1a" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Front claws -->
+    <path d="M48 88 L45 90 M49 89 L47 92 M50 88 L50 92" stroke="#8b1a1a" stroke-width="0.8"/>
+
+    <path d="M66 76 L68 90 C70 94, 66 94, 64 90 L64 86"
+          fill="none" stroke="#8b1a1a" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Back claws -->
+    <path d="M64 90 L61 92 M65 91 L63 94 M66 90 L66 94" stroke="#8b1a1a" stroke-width="0.8"/>
+
+    <!-- Hind leg -->
+    <path d="M46 66 L38 78 C36 82, 32 82, 33 78 L36 74"
+          fill="none" stroke="#8b1a1a" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M33 78 L30 80 M34 79 L32 82 M35 78 L35 82" stroke="#8b1a1a" stroke-width="0.8"/>
+
+    <!-- Spine ridges along back -->
+    <path d="M148 46 L150 40" stroke="#8b1a1a" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M142 43 L143 37" stroke="#8b1a1a" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M135 40 L135 34" stroke="#8b1a1a" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M110 43 L110 38" stroke="#8b1a1a" stroke-width="1" stroke-linecap="round"/>
+    <path d="M100 45 L99 40" stroke="#8b1a1a" stroke-width="1" stroke-linecap="round"/>
+    <path d="M88 44 L87 39" stroke="#8b1a1a" stroke-width="1" stroke-linecap="round"/>
+
+    <!-- Decorative dot accents - manuscript style -->
+    <circle cx="178" cy="33" r="1.5" fill="#b8860b" opacity="0.4"/>
+    <circle cx="2" cy="68" r="1.5" fill="#b8860b" opacity="0.4"/>
+    <circle cx="148" cy="4" r="1.5" fill="#b8860b" opacity="0.4"/>
+  </g>
+</svg>

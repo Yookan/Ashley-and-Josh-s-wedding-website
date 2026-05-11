@@ -1,0 +1,1443 @@
+/* ============================================
+   Josh & Ashley's Wedding
+   Medieval Illuminated Manuscript Theme
+   ============================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --bg-parchment: #f2e6ce;
+  --bg-parchment-dark: #e6d4b4;
+  --bg-parchment-light: #f8f0de;
+  --bg-card: #f5ebd6;
+  --bg-card-alt: #efe0c4;
+  --bg-dark: #2c1f10;
+
+  --red-vine: #8b1a1a;
+  --red-vine-light: #a83232;
+  --red-vine-dim: rgba(139, 26, 26, 0.15);
+  --blue-dragon: #1a3a6b;
+  --blue-accent: #2a4a7a;
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+  --gold-dim: rgba(184, 134, 11, 0.15);
+  --gold-border: rgba(184, 134, 11, 0.4);
+
+  --ink: #2c1810;
+  --ink-mid: #4a3020;
+  --ink-dim: rgba(44, 24, 16, 0.65);
+  --ink-faint: rgba(44, 24, 16, 0.35);
+  --text: #2c1810;
+  --text-dim: rgba(44, 24, 16, 0.65);
+
+  /* Aliases for inline styles that reference old variable names */
+  --cream: #2c1810;
+  --cream-dim: rgba(44, 24, 16, 0.7);
+  --cream-faint: rgba(44, 24, 16, 0.4);
+  --bg-card: #f5ebd6;
+  --burgundy: #8b1a1a;
+  --emerald: #2a5a48;
+  --emerald-light: #3a7a60;
+  --mauve: #7a5a68;
+  --mauve-light: #9a7a88;
+
+  --danger: #8b1a1a;
+  --success: #2a5a48;
+  --warning: #b8860b;
+
+  --font-heading: 'Cinzel', Georgia, serif;
+  --font-display: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  --font-body: 'Lato', 'Segoe UI', sans-serif;
+  --max-width: 1100px;
+  --nav-height: 70px;
+
+  --shadow-soft: 0 2px 12px rgba(44, 24, 16, 0.1);
+  --shadow-lifted: 0 6px 24px rgba(44, 24, 16, 0.15);
+  --border-ornate: 3px double var(--gold);
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-parchment);
+  color: var(--text);
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.015' numOctaves='3' seed='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23s)' opacity='0.03'/%3E%3C/svg%3E"),
+    linear-gradient(170deg,
+      #e8d5b0 0%,
+      #f2e6ce 8%,
+      #ecdabc 20%,
+      #f0e2c8 35%,
+      #e6d0aa 50%,
+      #f2e6ce 65%,
+      #ecdabc 80%,
+      #f0e2c8 92%,
+      #e8d5b0 100%);
+  /* Parchment vignette — darker burned edges */
+  box-shadow:
+    inset 0 0 80px rgba(120, 80, 30, 0.15),
+    inset 0 0 200px rgba(100, 65, 20, 0.08);
+}
+
+a {
+  color: var(--red-vine);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--red-vine-light);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.2rem; }
+
+/* ---------- Utility ---------- */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.text-center { text-align: center; }
+.text-gold { color: var(--gold); }
+.text-dim { color: var(--text-dim); }
+
+/* ---------- Ornamental Divider ---------- */
+.divider {
+  width: 200px;
+  height: auto;
+  background: none;
+  margin: 1.5rem auto;
+  text-align: center;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--red-vine);
+  letter-spacing: 0.3rem;
+}
+
+.divider::before {
+  content: '\2740 \2766 \2740';
+  display: block;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  border: 2px solid var(--red-vine);
+  color: var(--red-vine);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: transparent;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: var(--red-vine);
+  color: var(--bg-parchment);
+}
+
+.btn-filled {
+  background: var(--red-vine);
+  color: var(--bg-parchment);
+}
+
+.btn-filled:hover {
+  background: var(--red-vine-light);
+  color: var(--bg-parchment);
+}
+
+/* ---------- Parchment Scroll Effect ---------- */
+body {
+  position: relative;
+}
+
+/* ---------- Scroll Page Wrapper ---------- */
+/* Body becomes the scroll parchment — all decorations are absolute
+   so they sit on the page like real ink and scroll with content */
+body {
+  position: relative;
+}
+
+/* Scroll curl edges - top & bottom of the page */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-image: url('../images/scroll-top.svg');
+  background-size: 100% 40px;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 5;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-image: url('../images/scroll-bottom.svg');
+  background-size: 100% 40px;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ---------- Ornate Page Border ---------- */
+.page-border-outer {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 3px double var(--gold);
+  pointer-events: none;
+  z-index: 5;
+  border-radius: 2px;
+}
+
+.page-border-inner {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: 1px solid var(--gold-border);
+  pointer-events: none;
+  z-index: 5;
+  border-radius: 2px;
+}
+
+/* ---------- Floral Vine Borders ---------- */
+.vine-left,
+.vine-right {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  background-image: url('../images/floral-border-left.svg');
+  background-repeat: repeat-y;
+  background-size: 60px auto;
+}
+
+.vine-left {
+  left: 18px;
+}
+
+.vine-right {
+  right: 18px;
+  transform: scaleX(-1);
+}
+
+/* ---------- Corner Ornaments ---------- */
+.corner-tl,
+.corner-tr,
+.corner-bl,
+.corner-br {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 6;
+  background-image: url('../images/corner-ornament.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.corner-tl { top: 4px; left: 4px; }
+.corner-tr { top: 4px; right: 4px; transform: scaleX(-1); }
+.corner-bl { bottom: 4px; left: 4px; transform: scaleY(-1); }
+.corner-br { bottom: 4px; right: 4px; transform: scale(-1, -1); }
+
+/* ---------- Medieval Icon Decorations ---------- */
+/* These sit inline on the page like doodles in a medieval manuscript */
+.medieval-icons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.3;
+  padding: 1.5rem 1rem;
+  margin: 0;
+}
+
+.medieval-icons img {
+  height: 50px;
+  width: auto;
+}
+
+.medieval-icons .icon-sword {
+  height: 65px;
+}
+
+.medieval-icons .icon-shield {
+  height: 60px;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.medieval-icons .icon-shield:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.medieval-icons .icon-castle {
+  width: 80px;
+  height: auto;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.medieval-icons .icon-castle:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.medieval-icons .icon-dragon {
+  width: 90px;
+  height: auto;
+}
+
+/* ---------- Navigation ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: var(--bg-dark);
+  z-index: 10000;
+  border-bottom: 3px double var(--gold);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+.nav-logo:hover {
+  color: var(--gold-light);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(232, 214, 180, 0.8);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+  font-weight: 600;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--gold);
+  transition: all 0.3s;
+}
+
+/* ---------- Hero / Home ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(184, 134, 11, 0.08) 0%, transparent 60%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.hero-pretext {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red-vine);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.hero .ampersand {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  display: block;
+  margin: 0.5rem 0;
+  font-style: italic;
+  color: var(--red-vine);
+}
+
+.hero-date {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  color: var(--ink-mid);
+  margin: 2rem 0 0.5rem;
+  font-weight: 600;
+}
+
+.hero-venue {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+
+/* ---------- Countdown ---------- */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  color: var(--red-vine);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* ---------- Photo Placeholder ---------- */
+.photo-placeholder {
+  background: var(--bg-card);
+  border: 2px dashed var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.photo-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(184, 134, 11, 0.05) 0%, transparent 70%);
+}
+
+.photo-placeholder span {
+  position: relative;
+  z-index: 1;
+}
+
+.photo-placeholder--hero {
+  width: 300px;
+  height: 400px;
+  margin: 2rem auto;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.photo-placeholder--square {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.photo-placeholder--landscape {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+
+.photo-placeholder--portrait {
+  width: 100%;
+  aspect-ratio: 2/3;
+}
+
+/* ---------- Page Header ---------- */
+.page-header {
+  padding: calc(var(--nav-height) + 4rem) 0 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  position: relative;
+  z-index: 1;
+}
+
+.page-header .divider {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header p {
+  position: relative;
+  z-index: 1;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ---------- Cards (Parchment Panels) ---------- */
+.card {
+  background: var(--bg-parchment-light);
+  border: 2px solid var(--gold-border);
+  border-radius: 4px;
+  padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lifted);
+}
+
+/* ---------- Alternate Section Background ---------- */
+.section[style*="background:var(--bg-card)"],
+.section[style*="background: var(--bg-card)"] {
+  background: var(--bg-parchment-dark) !important;
+}
+
+/* ---------- Grid Layouts ---------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* ---------- Wedding Party Cards ---------- */
+.party-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.party-card .photo-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  border: 3px double var(--gold);
+}
+
+.party-card h4 {
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.party-card .role {
+  color: var(--red-vine);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ---------- Details / Info Blocks ---------- */
+.info-block {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.info-block h3 {
+  color: var(--red-vine);
+  margin-bottom: 1rem;
+}
+
+.info-block p {
+  color: var(--ink-dim);
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.info-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ---------- Registry ---------- */
+.registry-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+.registry-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.registry-card p {
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* ---------- FAQ Accordion ---------- */
+.faq-item {
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+}
+
+.faq-question:hover {
+  color: var(--red-vine);
+}
+
+.faq-question .icon {
+  font-size: 1.5rem;
+  color: var(--red-vine);
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question .icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 0 1.5rem;
+  color: var(--text-dim);
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+/* ---------- Gallery Grid ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery-grid .photo-placeholder {
+  aspect-ratio: 1;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  border: 3px solid var(--gold-border);
+  box-shadow: var(--shadow-soft);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-lifted);
+  transform: scale(1.02);
+}
+
+/* ---------- Real Images ---------- */
+.story-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  border: 3px solid var(--gold-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-img {
+  width: 300px;
+  height: 400px;
+  margin: 2rem auto;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  object-fit: cover;
+  display: block;
+  border: 4px double var(--gold);
+  box-shadow: 0 4px 20px rgba(44, 24, 16, 0.2);
+}
+
+.venue-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  border: 3px solid var(--gold-border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- RSVP Placeholder ---------- */
+.rsvp-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rsvp-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.rsvp-content p {
+  color: var(--text-dim);
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 3px double var(--gold);
+  padding: 3rem 0;
+  text-align: center;
+  background: var(--bg-dark);
+}
+
+.footer p {
+  color: rgba(232, 214, 180, 0.6);
+  font-size: 0.95rem;
+}
+
+.footer .names {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   BRIDAL PARTY (Password-Protected) Styles
+   ============================================ */
+
+/* ---------- Login Page ---------- */
+.login-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.login-box {
+  background: var(--bg-parchment-light);
+  border: 3px double var(--gold);
+  border-radius: 4px;
+  padding: 3rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: var(--shadow-lifted);
+}
+
+.login-box h2 {
+  margin-bottom: 0.5rem;
+}
+
+.login-box p {
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  background: var(--bg-parchment);
+  border: 2px solid var(--gold-border);
+  border-radius: 4px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.login-box input[type="password"]:focus {
+  border-color: var(--gold);
+}
+
+.login-box .error-msg {
+  color: var(--danger);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.login-box .error-msg.show {
+  display: block;
+}
+
+/* ---------- Bridal Party Sidebar Layout ---------- */
+.bp-layout {
+  display: flex;
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+}
+
+.bp-sidebar {
+  width: 260px;
+  background: var(--bg-parchment-dark);
+  border-right: 3px double var(--gold);
+  padding: 2rem 0;
+  position: fixed;
+  top: var(--nav-height);
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.bp-sidebar h3 {
+  font-size: 0.95rem;
+  color: var(--red-vine);
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.bp-sidebar-nav {
+  list-style: none;
+}
+
+.bp-sidebar-nav a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--ink-mid);
+  font-size: 1rem;
+  border-left: 3px solid transparent;
+  transition: all 0.3s;
+}
+
+.bp-sidebar-nav a:hover,
+.bp-sidebar-nav a.active {
+  color: var(--red-vine);
+  background: var(--red-vine-dim);
+  border-left-color: var(--red-vine);
+}
+
+.bp-main {
+  flex: 1;
+  margin-left: 260px;
+  padding: 2.5rem 3rem;
+}
+
+.bp-main h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bp-main .subtitle {
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+/* ---------- Dashboard Cards ---------- */
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dash-card {
+  background: var(--bg-parchment-light);
+  border: 2px solid var(--gold-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.dash-card h4 {
+  color: var(--red-vine);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.dash-card .big-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--ink);
+}
+
+.dash-card .detail {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+/* ---------- Quick Links Grid ---------- */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quick-link {
+  display: block;
+  background: var(--bg-parchment-light);
+  border: 2px solid var(--gold-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--ink);
+  transition: all 0.3s;
+  box-shadow: var(--shadow-soft);
+  font-size: 1.05rem;
+}
+
+.quick-link:hover {
+  border-color: var(--red-vine);
+  color: var(--red-vine);
+  transform: translateY(-2px);
+}
+
+.quick-link .ql-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* ---------- To-Do List ---------- */
+.todo-filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.todo-filter {
+  padding: 0.4rem 1rem;
+  background: var(--bg-parchment-light);
+  border: 1px solid var(--gold-border);
+  border-radius: 20px;
+  color: var(--ink-mid);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.todo-filter:hover,
+.todo-filter.active {
+  border-color: var(--red-vine);
+  color: var(--red-vine);
+  background: var(--red-vine-dim);
+}
+
+/* ---------- Tables ---------- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.data-table th {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-bottom: 3px double var(--gold);
+  color: var(--red-vine);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.data-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.15);
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+}
+
+.data-table tr:hover td {
+  background: rgba(184, 134, 11, 0.06);
+}
+
+/* ---------- Status Badges ---------- */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge--done {
+  background: rgba(42, 90, 72, 0.18);
+  color: #1a5a38;
+}
+
+.badge--progress {
+  background: rgba(184, 134, 11, 0.15);
+  color: #8b6914;
+}
+
+.badge--not-started {
+  background: rgba(139, 26, 26, 0.12);
+  color: #8b1a1a;
+}
+
+/* ---------- Color-coded assignees ---------- */
+.assignee-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.assignee-bride { background: #9a7a88; }
+.assignee-groom { background: #2a5a48; }
+.assignee-parents-bw { background: #4a8a5a; }
+.assignee-parents-h { background: #b8860b; }
+.assignee-moh { background: #8b1a1a; }
+.assignee-bestman { background: #1a3a6b; }
+.assignee-party { background: #6b2940; }
+.assignee-family { background: #6b4a6e; }
+
+/* ---------- Vendor Cards ---------- */
+.vendor-card {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.vendor-card h4 {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.vendor-card .vendor-service {
+  color: var(--red-vine);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.vendor-card .vendor-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.vendor-card .vendor-details dt {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vendor-card .vendor-details dd {
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Contact Cards ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-card {
+  padding: 1.5rem;
+}
+
+.contact-card h4 {
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.contact-card .contact-role {
+  color: var(--red-vine);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-card .contact-info p {
+  color: var(--ink-dim);
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact-card .contact-info strong {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+/* ---------- Schedule ---------- */
+.schedule-day {
+  margin-bottom: 3rem;
+}
+
+.schedule-day h3 {
+  color: var(--red-vine);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gold-border);
+}
+
+.schedule-item {
+  display: flex;
+  gap: 2rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.1);
+}
+
+.schedule-time {
+  min-width: 100px;
+  color: var(--red-vine);
+  font-size: 1rem;
+}
+
+.schedule-desc {
+  color: var(--ink-dim);
+}
+
+.schedule-placeholder {
+  color: var(--text-dim);
+  font-style: italic;
+  padding: 1rem 0;
+  font-size: 1.05rem;
+}
+
+/* ---------- Progress Bar ---------- */
+.progress-bar {
+  height: 8px;
+  background: var(--bg-parchment-dark);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  border: 1px solid var(--gold-border);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s;
+}
+
+.progress-bar-fill--green { background: var(--emerald); }
+.progress-bar-fill--gold { background: var(--red-vine); }
+
+/* ---------- Mobile Sidebar Toggle ---------- */
+.bp-sidebar-toggle {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--red-vine);
+  color: var(--bg-parchment);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(44, 24, 16, 0.3);
+}
+
+/* ---------- Override inline styles from dark theme ---------- */
+strong[style*="color:var(--cream)"] {
+  color: var(--ink) !important;
+}
+
+strong[style*="color:var(--gold)"] {
+  color: var(--red-vine) !important;
+}
+
+h4[style*="color:var(--gold)"] {
+  color: var(--red-vine) !important;
+}
+
+h3[style*="color:var(--gold)"] {
+  color: var(--red-vine) !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  html { font-size: 17px; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.3rem; }
+
+  .hero h1 { font-size: 2.8rem; }
+  .hero .ampersand { font-size: 1.8rem; }
+
+  .countdown { gap: 1rem; }
+  .countdown-number { font-size: 2rem; }
+
+  .page-border-outer { top: 4px; left: 4px; right: 4px; bottom: 4px; }
+  .page-border-inner { top: 8px; left: 8px; right: 8px; bottom: 8px; }
+  .vine-left, .vine-right { width: 35px; }
+  .corner-tl, .corner-tr, .corner-bl, .corner-br { width: 70px; height: 70px; }
+  .medieval-icons img { height: 35px; }
+  .medieval-icons .icon-sword { height: 45px; }
+  .medieval-icons .icon-shield { height: 42px; }
+  .medieval-icons .icon-castle { width: 55px; }
+  .medieval-icons .icon-dragon { width: 60px; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 31, 16, 0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section { padding: 3rem 0; }
+
+  .bp-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: 998;
+  }
+
+  .bp-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .bp-main {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .bp-sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .data-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .photo-placeholder--hero {
+    width: 220px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .countdown { flex-wrap: wrap; }
+  .countdown-item { min-width: 70px; }
+  .vine-left, .vine-right { width: 25px; opacity: 0.5; }
+  .corner-tl, .corner-tr, .corner-bl, .corner-br { width: 50px; height: 50px; }
+  .page-border-outer { top: 3px; left: 3px; right: 3px; bottom: 3px; border-width: 2px; }
+  .page-border-inner { top: 6px; left: 6px; right: 6px; bottom: 6px; }
+  .medieval-icons { gap: 1rem; }
+  .medieval-icons img { height: 28px; }
+  .medieval-icons .icon-sword { height: 36px; }
+  .medieval-icons .icon-shield { height: 34px; }
+  .medieval-icons .icon-castle { width: 45px; }
+  .medieval-icons .icon-dragon { width: 50px; }
+}

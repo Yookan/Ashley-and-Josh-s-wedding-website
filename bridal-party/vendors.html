@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendors | Bridal Party Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Medieval Decorative Elements -->
+  <div class="page-border-outer"></div>
+  <div class="page-border-inner"></div>
+  <div class="vine-left"></div>
+  <div class="vine-right"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+  <div class="corner-bl"></div>
+  <div class="corner-br"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">J & A</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Main Site</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="bp-layout">
+    <aside class="bp-sidebar">
+      <h3>Planning Hub</h3>
+      <ul class="bp-sidebar-nav">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="todo.html">To-Do List</a></li>
+        <li><a href="vendors.html" class="active">Vendors</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="beauty.html">Hair & Makeup</a></li>
+        <li><a href="music.html">Music Suggestions</a></li>
+        <li><a href="schedule.html">Weekend Schedule</a></li>
+      </ul>
+    </aside>
+
+    <main class="bp-main">
+      <h1>Vendors</h1>
+      <p class="subtitle">Booked and prospective vendors for the wedding</p>
+
+      <!-- Decided Vendors -->
+      <h2 style="margin-bottom:1rem;color:var(--gold);">Booked Vendors</h2>
+
+      <div class="card vendor-card">
+        <h4>Aldie Mansion</h4>
+        <p class="vendor-service">Venue</p>
+        <dl class="vendor-details">
+          <div><dt>Contact</dt><dd>Kim Bates</dd></div>
+          <div><dt>Phone</dt><dd>267-435-3198</dd></div>
+          <div><dt>Email</dt><dd>aldie@jamcater.com</dd></div>
+          <div><dt>Notes</dt><dd>Venue for ceremony and reception</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--done">Booked</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Jeffery Miller Catering</h4>
+        <p class="vendor-service">Catering</p>
+        <dl class="vendor-details">
+          <div><dt>Contact</dt><dd>Jeffery Miller</dd></div>
+          <div><dt>Phone</dt><dd>(610) 622-3700</dd></div>
+          <div><dt>Notes</dt><dd>Included with venue</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--done">Booked</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Rock-It Entertainment</h4>
+        <p class="vendor-service">DJ & Band</p>
+        <dl class="vendor-details">
+          <div><dt>Contact</dt><dd>Andrew</dd></div>
+          <div><dt>Phone</dt><dd>(609) 969-1100</dd></div>
+          <div><dt>Notes</dt><dd>Sax, DJ, drum pack</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--progress">Sending deposit</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Runway Recycled Inc.</h4>
+        <p class="vendor-service">Bridal Gown Alterations</p>
+        <dl class="vendor-details">
+          <div><dt>Phone</dt><dd>(215) 989-0600</dd></div>
+          <div><dt>Notes</dt><dd>Alterations</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Sagets Formal Wear</h4>
+        <p class="vendor-service">Groom's Suit</p>
+        <dl class="vendor-details">
+          <div><dt>Phone</dt><dd>(610) 259-3251</dd></div>
+          <div><dt>Price</dt><dd>$1,200</dd></div>
+          <div><dt>Notes</dt><dd>Custom made</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Generation Tux</h4>
+        <p class="vendor-service">Groomsmen Rentals</p>
+        <dl class="vendor-details">
+          <div><dt>Phone</dt><dd>(844) 726-4889</dd></div>
+          <div><dt>Price</dt><dd>$159 per person</dd></div>
+          <div><dt>Notes</dt><dd>Rentals</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Little Miss Delilah</h4>
+        <p class="vendor-service">Florals - Centerpieces</p>
+        <dl class="vendor-details">
+          <div><dt>Phone</dt><dd>(215) 681-1730</dd></div>
+          <div><dt>Notes</dt><dd>Wooden flowers that look real and last forever</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Myrtle & Magnolia</h4>
+        <p class="vendor-service">Florals - Bridal Party</p>
+        <dl class="vendor-details">
+          <div><dt>Phone</dt><dd>(215) 914-3805</dd></div>
+          <div><dt>Notes</dt><dd>Real flowers for bridal party</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Emaleena Styles LLC</h4>
+        <p class="vendor-service">Hair & Makeup</p>
+        <dl class="vendor-details">
+          <div><dt>Contact</dt><dd>Emaleena</dd></div>
+          <div><dt>Email</dt><dd>emaleenastylesllc@gmail.com</dd></div>
+          <div><dt>Price</dt><dd>$1,720 (bride, bridesmaids, mother of groom)</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Love & Lace Co.</h4>
+        <p class="vendor-service">Event Extras</p>
+        <dl class="vendor-details">
+          <div><dt>Email</dt><dd>loveandlaceco.nj@gmail.com</dd></div>
+          <div><dt>Notes</dt><dd>Watercolor guest portraits, bouquets for bridal party, sticker/temp tattoo machine</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="card vendor-card">
+        <h4>Los Gallos Cigar Box</h4>
+        <p class="vendor-service">Groomsmen Suite</p>
+        <dl class="vendor-details">
+          <div><dt>Phone</dt><dd>(716) 381-0813</dd></div>
+          <div><dt>Price</dt><dd>$350</dd></div>
+          <div><dt>Notes</dt><dd>Box of cigars, cutters, and torches customized for the groomsmen</dd></div>
+          <div><dt>Status</dt><dd><span class="badge badge--not-started">Haven't contacted</span></dd></div>
+        </dl>
+      </div>
+
+      <!-- Still Deciding -->
+      <h2 style="margin-top:3rem;margin-bottom:1rem;color:var(--gold);">Still Looking For...</h2>
+
+      <div class="grid-2">
+        <div class="card" style="padding:1.5rem;">
+          <h4 style="margin-bottom:0.5rem;">Photographer</h4>
+          <p class="text-dim">No options selected yet. Research in progress.</p>
+        </div>
+        <div class="card" style="padding:1.5rem;">
+          <h4 style="margin-bottom:0.5rem;">Videographer</h4>
+          <p class="text-dim">No options selected yet. Research in progress.</p>
+        </div>
+        <div class="card" style="padding:1.5rem;">
+          <h4 style="margin-bottom:0.5rem;">Officiant</h4>
+          <p class="text-dim">Looking at Judge Rice and Judge Sanchez. Need contact information.</p>
+        </div>
+        <div class="card" style="padding:1.5rem;">
+          <h4 style="margin-bottom:0.5rem;">Event Extras</h4>
+          <p class="text-dim">Childcare and photobooth options being explored.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <button class="bp-sidebar-toggle" aria-label="Toggle sidebar">&#x2630;</button>
+
+  <div class="medieval-icons">
+    <img src="../images/sword.svg" alt="" class="icon-sword" aria-hidden="true">
+    <a href="../secret-lair.html" style="display:inline-flex"><img src="../images/castle.svg" alt="" class="icon-castle" aria-hidden="true"></a>
+    <a href="../quest/gate.html" style="display:inline-flex"><img src="../images/shield-heart.svg" alt="" class="icon-shield" aria-hidden="true"></a>
+    <img src="../images/dragon.svg" alt="" class="icon-dragon" aria-hidden="true">
+    <img src="../images/sword.svg" alt="" class="icon-sword" aria-hidden="true" style="transform:scaleX(-1)">
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

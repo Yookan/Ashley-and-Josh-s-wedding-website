@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" fill="none">
+  <!-- Top-left corner ornament with floral vine pattern -->
+  <g opacity="0.4">
+    <!-- Main corner curves -->
+    <path d="M0 50 C10 45, 20 30, 25 20 C30 10, 40 5, 50 0"
+          stroke="#8b1a1a" stroke-width="2.5" fill="none"/>
+    <path d="M0 70 C15 60, 30 40, 40 25 C50 10, 60 5, 70 0"
+          stroke="#8b1a1a" stroke-width="1.5" fill="none"/>
+
+    <!-- Floral elements at corner -->
+    <!-- Main flower -->
+    <circle cx="30" cy="30" r="8" fill="none" stroke="#b8860b" stroke-width="1.5"/>
+    <circle cx="30" cy="30" r="3" fill="#8b1a1a"/>
+    <!-- Petals -->
+    <ellipse cx="30" cy="20" rx="3" ry="5" fill="rgba(139, 26, 26, 0.2)" stroke="#8b1a1a" stroke-width="0.5"/>
+    <ellipse cx="40" cy="30" rx="5" ry="3" fill="rgba(139, 26, 26, 0.2)" stroke="#8b1a1a" stroke-width="0.5"/>
+    <ellipse cx="30" cy="40" rx="3" ry="5" fill="rgba(139, 26, 26, 0.2)" stroke="#8b1a1a" stroke-width="0.5"/>
+    <ellipse cx="20" cy="30" rx="5" ry="3" fill="rgba(139, 26, 26, 0.2)" stroke="#8b1a1a" stroke-width="0.5"/>
+    <ellipse cx="23" cy="23" rx="3" ry="4" transform="rotate(45 23 23)" fill="rgba(139, 26, 26, 0.15)" stroke="#8b1a1a" stroke-width="0.5"/>
+    <ellipse cx="37" cy="23" rx="3" ry="4" transform="rotate(-45 37 23)" fill="rgba(139, 26, 26, 0.15)" stroke="#8b1a1a" stroke-width="0.5"/>
+    <ellipse cx="37" cy="37" rx="3" ry="4" transform="rotate(45 37 37)" fill="rgba(139, 26, 26, 0.15)" stroke="#8b1a1a" stroke-width="0.5"/>
+    <ellipse cx="23" cy="37" rx="3" ry="4" transform="rotate(-45 23 37)" fill="rgba(139, 26, 26, 0.15)" stroke="#8b1a1a" stroke-width="0.5"/>
+
+    <!-- Vine extending down -->
+    <path d="M25 40 C20 55, 10 65, 5 80" stroke="#8b1a1a" stroke-width="1.5" fill="none"/>
+    <path d="M15 55 C8 52, 3 56, 5 62" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M10 68 C3 65, -1 69, 2 75" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <!-- Small leaf -->
+    <path d="M18 52 C12 48, 8 52, 12 58 C14 54, 17 53, 18 52Z" fill="#8b1a1a" opacity="0.5"/>
+    <path d="M8 70 C2 66, -2 70, 2 76 C4 72, 7 71, 8 70Z" fill="#8b1a1a" opacity="0.5"/>
+
+    <!-- Vine extending right -->
+    <path d="M40 25 C55 20, 65 10, 80 5" stroke="#8b1a1a" stroke-width="1.5" fill="none"/>
+    <path d="M55 15 C52 8, 56 3, 62 5" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <path d="M68 10 C65 3, 69 -1, 75 2" stroke="#8b1a1a" stroke-width="0.8" fill="none"/>
+    <!-- Small leaf -->
+    <path d="M52 18 C48 12, 52 8, 58 12 C54 14, 53 17, 52 18Z" fill="#8b1a1a" opacity="0.5"/>
+    <path d="M70 8 C66 2, 70 -2, 76 2 C72 4, 71 7, 70 8Z" fill="#8b1a1a" opacity="0.5"/>
+
+    <!-- Small bud -->
+    <circle cx="5" cy="78" r="2.5" fill="#b8860b" opacity="0.6"/>
+    <circle cx="78" cy="5" r="2.5" fill="#b8860b" opacity="0.6"/>
+
+    <!-- Decorative dots -->
+    <circle cx="15" cy="15" r="1" fill="#b8860b"/>
+    <circle cx="45" cy="10" r="1" fill="#b8860b"/>
+    <circle cx="10" cy="45" r="1" fill="#b8860b"/>
+  </g>
+</svg>

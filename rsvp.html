@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP · Josh & Ashley</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/faire.css?v=11">
+  <style>
+    .rsvp-form { max-width: 640px; margin: 0 auto; }
+    .rsvp-form fieldset {
+      border: 1px solid var(--gold-soft);
+      padding: 1.5rem 1.5rem 1rem;
+      margin-bottom: 1.5rem;
+      background: rgba(248, 235, 199, 0.35);
+    }
+    .rsvp-form legend {
+      font-family: var(--sc);
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: var(--rose);
+      padding: 0 0.7rem;
+      text-transform: uppercase;
+    }
+    .rsvp-form .field { margin-bottom: 1rem; }
+    .rsvp-form .field:last-child { margin-bottom: 0; }
+    .rsvp-form label.field-label {
+      display: block;
+      font-family: var(--body);
+      font-variant: small-caps;
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      color: var(--ink-2);
+      margin-bottom: 0.35rem;
+    }
+    .rsvp-form input[type="text"],
+    .rsvp-form input[type="email"],
+    .rsvp-form select,
+    .rsvp-form textarea {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--gold-deep);
+      background: var(--paper);
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--ink);
+      box-sizing: border-box;
+    }
+    .rsvp-form textarea { font-family: var(--body); resize: vertical; min-height: 80px; }
+    .rsvp-form input:focus,
+    .rsvp-form select:focus,
+    .rsvp-form textarea:focus { border-color: var(--rose); }
+
+    .rsvp-form .radio-row, .rsvp-form .check-grid {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem;
+    }
+    .rsvp-form .check-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.4rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .rsvp-form .opt {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--body); font-size: 1rem; color: var(--ink-2);
+      cursor: pointer;
+    }
+    .rsvp-form .opt input[type="radio"],
+    .rsvp-form .opt input[type="checkbox"] {
+      width: 16px; height: 16px;
+      accent-color: var(--rose);
+      cursor: pointer;
+    }
+
+    .guest-block { margin-top: 1rem; }
+    .guest-block legend { color: var(--gold-deep); }
+    .guest-block .name-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .form-status {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      display: none;
+    }
+    .form-status.error { color: var(--rose); border: 1px solid var(--rose); }
+    .form-status.success { color: var(--gold-deep); border: 1px solid var(--gold-deep); background: rgba(248, 235, 199, 0.6); }
+    .form-status.visible { display: block; }
+
+    .submit-row { text-align: center; margin-top: 1.5rem; }
+    .submit-row button[disabled] { opacity: 0.5; cursor: wait; }
+
+    .help-text {
+      font-family: var(--body);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body data-screen-label="RSVP">
+  <div class="page-decor" aria-hidden="true"><span class="corner corner--tl"></span><span class="corner corner--tr"></span><span class="corner corner--bl"></span><span class="corner corner--br"></span></div>
+  <span class="vine vine--left" aria-hidden="true"></span><span class="vine vine--right" aria-hidden="true"></span>
+  <nav class="nav"><div class="nav__inner"><a href="index.html" class="nav__logo">Josh <em>&</em> Ashley</a><ul class="nav__links"><li><a href="index.html">Home</a></li><li><a href="our-story.html">Our Story</a></li><li><a href="details.html">Details</a></li><li><a href="wedding-party.html">Party</a></li><li><a href="registry.html">Registry</a></li><li><a href="travel.html">Travel</a></li><li><a href="rsvp.html" class="is-active">RSVP</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="faq.html">FAQ</a></li></ul><button class="nav__toggle">Menu</button></div></nav>
+
+  <header class="page-header">
+    <div class="wrap">
+      <span class="tag">Reply by Post</span>
+      <h1><em>RSVP</em></h1>
+      <p class="eyebrow">Kindly respond by the 15th of October, 2026.</p>
+      <span class="divider-orn" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <form id="rsvp-form" class="rsvp-form" novalidate>
+        <fieldset>
+          <legend>Your Party</legend>
+          <div class="field">
+            <label class="field-label" for="party-size">How many in your party?</label>
+            <select id="party-size" required>
+              <option value="1">1 — just me</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <p class="help-text">If your invitation listed specific names, please reply only for those guests.</p>
+          </div>
+          <div class="field">
+            <label class="field-label" for="email">Email</label>
+            <input type="email" id="email" required autocomplete="email">
+            <p class="help-text">So we can reach you with travel and day-of details.</p>
+          </div>
+        </fieldset>
+
+        <div id="guests-container"></div>
+
+        <fieldset>
+          <legend>A Note for the Couple</legend>
+          <div class="field">
+            <label class="field-label" for="message">Message (optional)</label>
+            <textarea id="message" rows="3" placeholder="Anything you'd like to share with us…"></textarea>
+          </div>
+          <div class="field">
+            <label class="field-label" for="song-request">Song request (optional)</label>
+            <input type="text" id="song-request" placeholder="What will get you on the dance floor?">
+          </div>
+        </fieldset>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn--solid" id="submit-btn">Send Reply</button>
+        </div>
+
+        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+      </form>
+
+      <p style="text-align:center;margin-top:2.5rem;font-size:0.95rem;color:var(--ink-soft);font-style:italic;">
+        Questions? Reach out to us at<br>
+        <a href="mailto:ashleyblumwoodland@gmail.com">ashleyblumwoodland@gmail.com</a> or
+        <a href="mailto:joshhanneman333@gmail.com">joshhanneman333@gmail.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <div class="secret-icons" aria-hidden="true">
+    <img src="images/sword.svg" alt=""><a href="secret-lair.html"><img src="images/castle.svg" alt="" style="height:44px;"></a><a href="quest/gate.html"><img src="images/shield-heart.svg" alt="" style="height:40px;"></a><img src="images/dragon.svg" alt="" style="height:42px;"><img src="images/sword.svg" alt="" style="transform:scaleX(-1);">
+  </div>
+
+  <footer class="footer"><div class="wrap"><p class="footer__names">Josh <em>&</em> Ashley</p><p class="footer__meta">The Thirteenth of November · MMXXVI · Doylestown</p></div></footer>
+
+  <script>
+    document.querySelector('.nav__toggle')?.addEventListener('click',
+      () => document.querySelector('.nav__links')?.classList.toggle('is-open'));
+
+    // ===== RSVP form =====
+
+    // 👇 Paste the Web App URL from the Google Apps Script deployment here.
+    const RSVP_ENDPOINT = 'SCRIPT_URL_HERE';
+
+    const DIET_OPTIONS = [
+      { id: 'vegetarian',       label: 'Vegetarian' },
+      { id: 'vegan',            label: 'Vegan' },
+      { id: 'glutenFree',       label: 'Gluten-free' },
+      { id: 'dairyFree',        label: 'Dairy-free' },
+      { id: 'nutAllergy',       label: 'Nut allergy' },
+      { id: 'shellfishAllergy', label: 'Shellfish allergy' },
+    ];
+
+    const partySize = document.getElementById('party-size');
+    const guestsContainer = document.getElementById('guests-container');
+    const form = document.getElementById('rsvp-form');
+    const status = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    function renderGuestBlock(i) {
+      const labelNum = i + 1;
+      return `
+        <fieldset class="guest-block" data-index="${i}">
+          <legend>Guest ${labelNum}</legend>
+          <div class="field">
+            <label class="field-label" for="g-name-${i}">Full name</label>
+            <input type="text" id="g-name-${i}" data-field="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <span class="field-label">Will be attending?</span>
+            <div class="radio-row">
+              <label class="opt"><input type="radio" name="g-attending-${i}" value="Yes" data-field="attending" required> Yes, joyfully</label>
+              <label class="opt"><input type="radio" name="g-attending-${i}" value="No" data-field="attending"> Sadly, must decline</label>
+            </div>
+          </div>
+          <div class="field">
+            <span class="field-label">Dietary needs (check all that apply)</span>
+            <div class="check-grid">
+              ${DIET_OPTIONS.map(d => `
+                <label class="opt"><input type="checkbox" data-diet="${d.id}"> ${d.label}</label>
+              `).join('')}
+            </div>
+            <label class="field-label" for="g-other-${i}" style="margin-top:0.5rem;">Other / specific allergies</label>
+            <input type="text" id="g-other-${i}" data-field="dietOther" placeholder="e.g. severe peanut allergy, low-sodium…">
+          </div>
+        </fieldset>
+      `;
+    }
+
+    function renderGuests() {
+      const n = parseInt(partySize.value, 10);
+      const current = guestsContainer.querySelectorAll('.guest-block').length;
+      if (n === current) return;
+      // Preserve existing values when growing; rebuild when shrinking
+      if (n > current) {
+        const html = Array.from({ length: n - current }, (_, k) => renderGuestBlock(current + k)).join('');
+        guestsContainer.insertAdjacentHTML('beforeend', html);
+      } else {
+        const blocks = guestsContainer.querySelectorAll('.guest-block');
+        for (let k = current - 1; k >= n; k--) blocks[k].remove();
+      }
+    }
+
+    partySize.addEventListener('change', renderGuests);
+    renderGuests(); // initial render
+
+    function collectFormData() {
+      const guests = Array.from(guestsContainer.querySelectorAll('.guest-block')).map(block => {
+        const i = block.dataset.index;
+        const name = block.querySelector('[data-field="name"]').value.trim();
+        const attendingEl = block.querySelector(`input[name="g-attending-${i}"]:checked`);
+        const attending = attendingEl ? attendingEl.value : '';
+        const diet = Array.from(block.querySelectorAll('[data-diet]:checked')).map(el => el.dataset.diet);
+        const dietOther = block.querySelector('[data-field="dietOther"]').value.trim();
+        return { name, attending, diet, dietOther };
+      });
+
+      return {
+        email: document.getElementById('email').value.trim(),
+        message: document.getElementById('message').value.trim(),
+        songRequest: document.getElementById('song-request').value.trim(),
+        guests
+      };
+    }
+
+    function showStatus(kind, msg) {
+      status.className = 'form-status ' + kind + ' visible';
+      status.textContent = msg;
+    }
+    function clearStatus() {
+      status.className = 'form-status';
+      status.textContent = '';
+    }
+
+    function validate(data) {
+      if (!data.email || !/^\S+@\S+\.\S+$/.test(data.email)) return 'Please enter a valid email.';
+      for (let i = 0; i < data.guests.length; i++) {
+        const g = data.guests[i];
+        if (!g.name) return `Please enter the full name for Guest ${i + 1}.`;
+        if (!g.attending) return `Please select an attending option for Guest ${i + 1}.`;
+      }
+      return null;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearStatus();
+
+      const data = collectFormData();
+      const err = validate(data);
+      if (err) { showStatus('error', err); return; }
+
+      if (RSVP_ENDPOINT === 'SCRIPT_URL_HERE') {
+        showStatus('error', 'RSVP endpoint not configured yet. (Setup pending.)');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        // Form-encoded POST so the browser treats it as a "simple request" and
+        // doesn't fire a CORS preflight (Apps Script doesn't handle OPTIONS).
+        const body = new URLSearchParams({ payload: JSON.stringify(data) });
+        const res = await fetch(RSVP_ENDPOINT, {
+          method: 'POST',
+          body,
+          redirect: 'follow'
+        });
+        const text = await res.text();
+        let result;
+        try { result = JSON.parse(text); } catch { result = { ok: res.ok }; }
+        if (!result.ok) throw new Error(result.error || 'Submission failed.');
+
+        form.style.display = 'none';
+        showStatus('success', 'Thank you! Your reply has been recorded. We can\'t wait to celebrate with you.');
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Reply';
+        showStatus('error', 'Something went wrong sending your reply. Please try again, or email us directly.');
+      }
+    });
+  </script>
+</body>
+</html>

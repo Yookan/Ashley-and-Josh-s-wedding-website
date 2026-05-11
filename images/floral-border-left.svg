@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 800" fill="none">
+  <!-- Left floral vine border -->
+  <g opacity="0.35">
+    <!-- Main vine stem -->
+    <path d="M40 0 C40 50, 25 80, 30 120 C35 160, 50 180, 45 220 C40 260, 20 290, 25 330 C30 370, 50 400, 45 440 C40 480, 20 510, 25 550 C30 590, 50 620, 45 660 C40 700, 30 740, 35 800" stroke="#8b1a1a" stroke-width="2" fill="none"/>
+
+    <!-- Leaves and flowers repeating pattern -->
+    <!-- Cluster 1 -->
+    <path d="M30 60 C15 50, 5 60, 10 75 C15 65, 25 65, 30 60Z" fill="#8b1a1a"/>
+    <path d="M30 60 C45 50, 55 60, 50 75 C45 65, 35 65, 30 60Z" fill="#8b1a1a"/>
+    <circle cx="30" cy="58" r="4" fill="#b8860b"/>
+    <path d="M35 80 C50 70, 60 80, 55 95 C50 85, 40 85, 35 80Z" fill="#8b1a1a"/>
+
+    <!-- Cluster 2 -->
+    <path d="M45 170 C30 160, 20 170, 25 185 C30 175, 40 175, 45 170Z" fill="#8b1a1a"/>
+    <path d="M45 170 C60 160, 70 170, 65 185 C60 175, 50 175, 45 170Z" fill="#8b1a1a"/>
+    <circle cx="45" cy="168" r="4" fill="#b8860b"/>
+    <path d="M35 195 C20 185, 10 195, 15 210 C20 200, 30 200, 35 195Z" fill="#8b1a1a"/>
+
+    <!-- Cluster 3 -->
+    <path d="M25 280 C10 270, 0 280, 5 295 C10 285, 20 285, 25 280Z" fill="#8b1a1a"/>
+    <path d="M25 280 C40 270, 50 280, 45 295 C40 285, 30 285, 25 280Z" fill="#8b1a1a"/>
+    <circle cx="25" cy="278" r="4" fill="#b8860b"/>
+    <path d="M35 305 C50 295, 60 305, 55 320 C50 310, 40 310, 35 305Z" fill="#8b1a1a"/>
+
+    <!-- Cluster 4 -->
+    <path d="M45 390 C30 380, 20 390, 25 405 C30 395, 40 395, 45 390Z" fill="#8b1a1a"/>
+    <path d="M45 390 C60 380, 70 390, 65 405 C60 395, 50 395, 45 390Z" fill="#8b1a1a"/>
+    <circle cx="45" cy="388" r="4" fill="#b8860b"/>
+    <path d="M30 415 C15 405, 5 415, 10 430 C15 420, 25 420, 30 415Z" fill="#8b1a1a"/>
+
+    <!-- Cluster 5 -->
+    <path d="M25 500 C10 490, 0 500, 5 515 C10 505, 20 505, 25 500Z" fill="#8b1a1a"/>
+    <path d="M25 500 C40 490, 50 500, 45 515 C40 505, 30 505, 25 500Z" fill="#8b1a1a"/>
+    <circle cx="25" cy="498" r="4" fill="#b8860b"/>
+    <path d="M40 525 C55 515, 65 525, 60 540 C55 530, 45 530, 40 525Z" fill="#8b1a1a"/>
+
+    <!-- Cluster 6 -->
+    <path d="M45 610 C30 600, 20 610, 25 625 C30 615, 40 615, 45 610Z" fill="#8b1a1a"/>
+    <path d="M45 610 C60 600, 70 610, 65 625 C60 615, 50 615, 45 610Z" fill="#8b1a1a"/>
+    <circle cx="45" cy="608" r="4" fill="#b8860b"/>
+    <path d="M30 635 C15 625, 5 635, 10 650 C15 640, 25 640, 30 635Z" fill="#8b1a1a"/>
+
+    <!-- Cluster 7 -->
+    <path d="M35 720 C20 710, 10 720, 15 735 C20 725, 30 725, 35 720Z" fill="#8b1a1a"/>
+    <path d="M35 720 C50 710, 60 720, 55 735 C50 725, 40 725, 35 720Z" fill="#8b1a1a"/>
+    <circle cx="35" cy="718" r="4" fill="#b8860b"/>
+
+    <!-- Small curling tendrils -->
+    <path d="M25 100 C10 95, 5 105, 12 110" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+    <path d="M50 210 C65 205, 70 215, 63 220" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+    <path d="M15 340 C0 335, -5 345, 2 350" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+    <path d="M55 450 C70 445, 75 455, 68 460" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+    <path d="M20 560 C5 555, 0 565, 7 570" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+    <path d="M50 670 C65 665, 70 675, 63 680" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+    <path d="M30 770 C15 765, 10 775, 17 780" stroke="#8b1a1a" stroke-width="1" fill="none"/>
+  </g>
+</svg>

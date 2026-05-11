@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 1200" width="140" height="1200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <defs>
+    <radialGradient id="roseL" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#753861"></stop>
+      <stop offset="60%" stop-color="#753861"></stop>
+      <stop offset="100%" stop-color="#753861"></stop>
+    </radialGradient>
+    <radialGradient id="roseSmL" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#753861"></stop>
+      <stop offset="100%" stop-color="#753861"></stop>
+    </radialGradient>
+    <linearGradient id="leafL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7a8a3a"></stop>
+      <stop offset="100%" stop-color="#4a5a20"></stop>
+    </linearGradient>
+    <linearGradient id="leafGoldL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c89b3a"></stop>
+      <stop offset="100%" stop-color="#8a6418"></stop>
+    </linearGradient>
+    <linearGradient id="swordBladeL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a8680"></stop>
+      <stop offset="50%" stop-color="#d8d4cc"></stop>
+      <stop offset="100%" stop-color="#6e6a62"></stop>
+    </linearGradient>
+    <linearGradient id="hiltL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c89b3a"></stop>
+      <stop offset="100%" stop-color="#7a5518"></stop>
+    </linearGradient>
+
+    <symbol id="roseBigL" viewBox="-30 -30 60 60">
+      <path d="M0,-24 C16,-22 22,-10 20,4 C12,2 4,-6 0,-14 Z" fill="url(#roseL)"></path>
+      <path d="M22,-6 C26,8 18,22 4,22 C4,14 10,6 16,0 Z" fill="url(#roseL)"></path>
+      <path d="M8,22 C-8,24 -22,14 -22,-2 C-14,-2 -6,6 0,14 Z" fill="url(#roseL)"></path>
+      <path d="M-22,-4 C-24,-18 -12,-26 2,-24 C0,-16 -8,-10 -16,-6 Z" fill="url(#roseL)"></path>
+      <path d="M0,-14 C10,-12 14,-4 10,4 C4,2 -2,-4 -4,-10 Z" fill="#753861"></path>
+      <path d="M12,0 C14,8 8,14 -2,12 C0,6 6,2 10,-2 Z" fill="#753861"></path>
+      <path d="M-12,2 C-14,-4 -10,-12 -2,-12 C0,-6 -4,0 -10,6 Z" fill="#753861"></path>
+      <path d="M-4,-2 C-2,-6 4,-6 5,-1 C6,4 1,7 -3,5 Z" fill="#753861"></path>
+      <circle r="1.4" fill="#753861"></circle>
+    </symbol>
+    <symbol id="roseSmL2" viewBox="-14 -14 28 28">
+      <circle r="12" fill="url(#roseSmL)"></circle>
+      <path d="M-8,-2 C-4,-8 4,-8 8,-2 C6,4 -6,4 -8,-2 Z" fill="#753861"></path>
+      <circle r="2.5" fill="#753861"></circle>
+    </symbol>
+    <symbol id="budL" viewBox="-8 -12 16 24">
+      <path d="M0,-10 C6,-10 8,-4 6,2 C2,6 -4,6 -6,2 C-8,-4 -6,-10 0,-10 Z" fill="#753861"></path>
+      <path d="M-6,4 C-8,8 -4,12 0,10 C4,12 8,8 6,4 C2,6 -2,6 -6,4 Z" fill="#4a5a20"></path>
+    </symbol>
+    <symbol id="leafL1" viewBox="-14 -6 28 12">
+      <path d="M-12,0 C-8,-6 8,-6 12,0 C8,6 -8,6 -12,0 Z" fill="url(#leafL)"></path>
+      <path d="M-10,0 L10,0" stroke="#2a3a10" stroke-width="0.6" fill="none"></path>
+    </symbol>
+    <symbol id="leafGoldL1" viewBox="-12 -5 24 10">
+      <path d="M-10,0 C-6,-5 6,-5 10,0 C6,5 -6,5 -10,0 Z" fill="url(#leafGoldL)"></path>
+      <path d="M-8,0 L8,0" stroke="#5a3e0a" stroke-width="0.5" fill="none"></path>
+    </symbol>
+    <symbol id="swordL" viewBox="0 0 40 180">
+      
+      <path d="M18,20 L22,20 L22,140 L18,140 Z" fill="url(#swordBladeL)" stroke="#5a5048" stroke-width="0.5"></path>
+      
+      <path d="M18,140 L22,140 L20,152 Z" fill="url(#swordBladeL)" stroke="#5a5048" stroke-width="0.5"></path>
+      
+      <line x1="20" y1="24" x2="20" y2="136" stroke="#5a5048" stroke-width="0.5"></line>
+      
+      <rect x="6" y="16" width="28" height="5" fill="url(#hiltL)" stroke="#5a3e0a" stroke-width="0.5"></rect>
+      
+      <rect x="17" y="6" width="6" height="10" fill="#4a2d18" stroke="#2a1608" stroke-width="0.4"></rect>
+      
+      <circle cx="20" cy="4" r="3.5" fill="url(#hiltL)" stroke="#5a3e0a" stroke-width="0.4"></circle>
+    </symbol>
+    <symbol id="scrollL" viewBox="0 0 40 30">
+      <path d="M4,8 C4,4 8,2 12,2 L32,2 C36,2 36,8 32,8 L12,8 C8,8 8,14 12,14 L32,14 C36,14 36,20 32,20 L12,20 C8,20 4,24 4,28" fill="none" stroke="#7a5518" stroke-width="1.2"></path>
+      <circle cx="6" cy="8" r="1.5" fill="#c89b3a"></circle>
+    </symbol>
+  </defs>
+
+  
+  <path d="M70 0 C 40 80, 100 150, 60 230 C 20 310, 100 390, 50 470 C 10 550, 95 620, 55 700 C 20 780, 90 830, 70 900 C 45 980, 95 1040, 65 1120 C 40 1170, 75 1195, 70 1200" fill="none" stroke="#5a3e15" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+  
+  <path d="M75 20 C 95 70, 55 130, 80 180 C 105 240, 50 300, 80 360 C 110 420, 50 480, 82 540 C 110 600, 55 660, 80 720 C 100 780, 60 840, 75 900 C 95 960, 58 1020, 82 1080 C 100 1140, 60 1180, 75 1195" fill="none" stroke="#6b4a1e" stroke-width="1.6" stroke-linecap="round" opacity="0.75"></path>
+
+  
+  <path d="M60 110 C 40 108, 30 120, 34 134 C 38 146, 52 144, 50 130" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+  <path d="M80 260 C 110 260, 120 275, 112 290 C 104 302, 88 298, 94 284" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+  <path d="M55 410 C 30 414, 22 432, 36 444 C 48 454, 62 442, 58 432" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+  <path d="M80 560 C 108 560, 118 578, 106 594 C 96 604, 82 598, 88 586" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+  <path d="M52 720 C 28 720, 18 736, 28 752 C 40 762, 58 752, 54 740" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+  <path d="M82 880 C 110 884, 118 900, 108 914 C 98 922, 84 916, 88 906" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+  <path d="M52 1050 C 28 1054, 18 1070, 30 1082 C 42 1090, 58 1080, 54 1070" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+  <path d="M84 1140 C 106 1142, 112 1156, 102 1168 C 92 1176, 82 1166, 88 1158" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.75"></path>
+
+  
+  <use href="#leafL1" x="38" y="60" transform="rotate(-30 38 60)"></use>
+  <use href="#leafGoldL1" x="95" y="95" transform="rotate(35 95 95)"></use>
+  <use href="#leafL1" x="42" y="175" transform="rotate(40 42 175)"></use>
+  <use href="#leafL1" x="100" y="215" transform="rotate(-25 100 215)"></use>
+  <use href="#leafGoldL1" x="40" y="290" transform="rotate(-40 40 290)"></use>
+  <use href="#leafL1" x="95" y="340" transform="rotate(30 95 340)"></use>
+  <use href="#leafL1" x="42" y="440" transform="rotate(-35 42 440)"></use>
+  <use href="#leafGoldL1" x="100" y="490" transform="rotate(45 100 490)"></use>
+  <use href="#leafL1" x="38" y="580" transform="rotate(-25 38 580)"></use>
+  <use href="#leafL1" x="100" y="640" transform="rotate(40 100 640)"></use>
+  <use href="#leafGoldL1" x="42" y="750" transform="rotate(-35 42 750)"></use>
+  <use href="#leafL1" x="95" y="820" transform="rotate(30 95 820)"></use>
+  <use href="#leafL1" x="45" y="870" transform="rotate(-20 45 870)"></use>
+  <use href="#leafGoldL1" x="98" y="940" transform="rotate(40 98 940)"></use>
+  <use href="#leafL1" x="40" y="1000" transform="rotate(-30 40 1000)"></use>
+  <use href="#leafL1" x="100" y="1075" transform="rotate(35 100 1075)"></use>
+  <use href="#leafGoldL1" x="42" y="1150" transform="rotate(-40 42 1150)"></use>
+
+  
+  <use href="#roseBigL" x="62" y="42" width="56" height="56"></use>
+  <use href="#roseSmL2" x="52" y="150" width="24" height="24"></use>
+  <use href="#budL" x="92" y="240" width="14" height="20" transform="rotate(20 99 250)"></use>
+  <use href="#roseBigL" x="22" y="340" width="50" height="50"></use>
+  <use href="#roseSmL2" x="86" y="420" width="22" height="22"></use>
+
+  
+  <use href="#swordL" x="50" y="470" width="40" height="180"></use>
+
+  <use href="#roseBigL" x="70" y="690" width="52" height="52"></use>
+  <use href="#budL" x="30" y="780" width="14" height="20" transform="rotate(-15 37 790)"></use>
+  <use href="#roseSmL2" x="84" y="850" width="22" height="22"></use>
+  <use href="#roseBigL" x="24" y="930" width="50" height="50"></use>
+  <use href="#roseSmL2" x="80" y="1020" width="24" height="24"></use>
+  <use href="#budL" x="36" y="1090" width="14" height="20" transform="rotate(25 43 1100)"></use>
+  <use href="#roseBigL" x="62" y="1140" width="48" height="48"></use>
+</svg>

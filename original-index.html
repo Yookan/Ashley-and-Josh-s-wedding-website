@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashley & Josh — Redesign Explorations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --parchment: #f2e6ce;
+      --parchment-dark: #e6d4b4;
+      --parchment-light: #f8f0de;
+      --ink: #2c1810;
+      --ink-mid: #4a3020;
+      --ink-dim: rgba(44, 24, 16, 0.65);
+      --burgundy: #8b1a1a;
+      --burgundy-light: #a83232;
+      --gold: #b8860b;
+      --gold-light: #d4a017;
+      --gold-border: rgba(184, 134, 11, 0.4);
+      --dark: #1a1410;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 17px; }
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--parchment);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+      background-image:
+        url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse at 50% 0%, #f2e6ce 0%, #e8d5b0 100%);
+    }
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+    .lede {
+      font-size: 1.15rem;
+      max-width: 640px;
+      color: var(--ink-mid);
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--parchment-light);
+      border: 1px solid var(--gold-border);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44,24,16,0.12);
+      border-color: var(--gold);
+    }
+    .swatch {
+      aspect-ratio: 4/3;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .card-body {
+      padding: 1.75rem 1.75rem 2rem;
+      border-top: 1px solid var(--gold-border);
+    }
+    .card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--ink-dim);
+      margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.35rem;
+    }
+    .card-sub {
+      font-style: italic;
+      color: var(--burgundy);
+      margin-bottom: 0.9rem;
+      font-size: 1rem;
+    }
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--ink-dim);
+      line-height: 1.6;
+    }
+    .card-cta {
+      margin-top: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+    }
+
+    /* Swatch 1 — Codex: editorial parchment */
+    .s-codex {
+      background:
+        linear-gradient(180deg, transparent 0%, transparent 72%, rgba(184,134,11,0.08) 100%),
+        #f5ead2;
+    }
+    .s-codex::before {
+      content: '';
+      position: absolute; inset: 18px;
+      border: 1px solid rgba(44,24,16,0.18);
+    }
+    .s-codex .mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      z-index: 1;
+    }
+    .s-codex .mark em {
+      font-style: italic;
+      color: var(--burgundy);
+      font-size: 2.4rem;
+      vertical-align: 0.25em;
+      padding: 0 0.1em;
+    }
+    .s-codex .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      color: var(--ink-dim);
+      margin-top: 1rem;
+      z-index: 1;
+    }
+
+    /* Swatch 2 — Oath: cinematic dark */
+    .s-oath {
+      background: radial-gradient(ellipse at 50% 40%, #2a1e14 0%, #120c08 100%);
+    }
+    .s-oath::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 45%, rgba(212,160,23,0.18) 0%, transparent 55%);
+    }
+    .s-oath .mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      color: #e8d4a8;
+      letter-spacing: 0.02em;
+      z-index: 1;
+    }
+    .s-oath .mark em {
+      font-style: italic;
+      color: #d4a017;
+      font-size: 2.2rem;
+      padding: 0 0.1em;
+    }
+    .s-oath .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      color: #8b6914;
+      margin-top: 1rem;
+      z-index: 1;
+    }
+
+    /* Swatch 3 — Faire: warm illuminated */
+    .s-faire {
+      background:
+        linear-gradient(135deg, #f2e6ce 0%, #ead5b0 100%);
+    }
+    .s-faire::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 2px double var(--gold);
+    }
+    .s-faire::after {
+      content: '';
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(139, 26, 26, 0.2);
+    }
+    .s-faire .mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--burgundy);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .s-faire .amp {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 3rem;
+      color: var(--gold);
+      text-transform: none;
+      font-weight: 300;
+      line-height: 0.9;
+    }
+    .s-faire .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      color: var(--ink-dim);
+      margin-top: 0.5rem;
+      z-index: 1;
+    }
+
+    .rationale {
+      margin-top: 6rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--gold-border);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+    }
+    @media (max-width: 900px) { .rationale { grid-template-columns: 1fr; } }
+    .rationale h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+    .rationale h2 em { font-style: italic; color: var(--burgundy); }
+    .rationale p {
+      font-size: 1.02rem;
+      color: var(--ink-mid);
+      margin-bottom: 1rem;
+    }
+    .rationale ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    .rationale li {
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+      padding: 0.5rem 0;
+      border-bottom: 1px dotted var(--gold-border);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+    }
+    .rationale li strong {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      font-weight: 500;
+      padding-top: 0.22rem;
+    }
+
+    .divider-ornament {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      color: var(--burgundy);
+      letter-spacing: 0.6em;
+      font-size: 1rem;
+    }
+    .foot {
+      margin-top: 4rem;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Redesign · three variations · Apr 2026</p>
+    <h1>Ashley <em>&</em> Josh<br>— a second pass.</h1>
+    <p class="lede">
+      The existing site nails the feeling — a D&amp;D-infused wedding that doesn't apologize for it.
+      These three variations keep every word of copy and the same parchment-gold-burgundy palette,
+      but commit harder to a single aesthetic direction each. Pick the one that feels most like you,
+      or mix pieces. All three share the same nav, footer, page structure, and photography.
+    </p>
+
+    <div class="grid">
+      <a class="card" href="codex/index.html">
+        <div class="swatch s-codex">
+          <div class="mark">Ashley<em>&</em>Josh</div>
+          <div class="meta">13 · XI · MMXXVI</div>
+        </div>
+        <div class="card-body">
+          <div class="card-num">Variation 01</div>
+          <div class="card-title">Codex</div>
+          <div class="card-sub">Editorial · archival · quiet</div>
+          <p class="card-desc">
+            An illuminated folio reimagined as a modern editorial. Asymmetric grids, generous
+            white space, mono captions, hairline rules. Typography does almost all the work.
+            D&amp;D lives in marginalia and a handful of carefully-placed artifacts.
+          </p>
+          <div class="card-cta">Open →</div>
+        </div>
+      </a>
+
+      <a class="card" href="oath/index.html">
+        <div class="swatch s-oath">
+          <div class="mark">Ashley<em>&</em>Josh</div>
+          <div class="meta">— MMXXVI —</div>
+        </div>
+        <div class="card-body">
+          <div class="card-num">Variation 02</div>
+          <div class="card-title">Oath</div>
+          <div class="card-sub">Cinematic · candlelit · theatrical</div>
+          <p class="card-desc">
+            The feast-hall at night. Deep ink backgrounds, candle-gold highlights, parchment
+            cards inlaid like illuminated pages on a table. Photography is framed and
+            celebrated. D&amp;D shows up as crests, seal motifs, and sworn-oath language.
+          </p>
+          <div class="card-cta">Open →</div>
+        </div>
+      </a>
+
+      <a class="card" href="faire/index.html">
+        <div class="swatch s-faire">
+          <div class="mark">Ashley<span class="amp">&</span>Josh</div>
+          <div class="meta">NOV · XIII · MMXXVI</div>
+        </div>
+        <div class="card-body">
+          <div class="card-num">Variation 03</div>
+          <div class="card-title">Faire</div>
+          <div class="card-sub">Warm · illuminated · storybook</div>
+          <p class="card-desc">
+            The original spirit, refined. Keeps the parchment warmth and ornate frames
+            but swaps stock flourishes for a precise set of handmade rules, drop-caps,
+            and chapter marks. Feels like a well-loved first-edition, not a kit.
+          </p>
+          <div class="card-cta">Open →</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="rationale">
+      <div>
+        <h2>Shared <em>foundation.</em></h2>
+        <p>
+          Every variation keeps these constants so the site stays recognisable as
+          <em>your</em> site — only the aesthetic language changes.
+        </p>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Palette</strong><span>Parchment, burgundy-vine, gold. Same family. Different saturation + role per variation.</span></li>
+          <li><strong>Type</strong><span>Cormorant Garamond (display) + EB Garamond (body) + JetBrains Mono (captions). All free, all durable, none overused.</span></li>
+          <li><strong>Copy</strong><span>Every word preserved verbatim — including the full proposal story and all FAQs.</span></li>
+          <li><strong>Photos</strong><span>Same image set from the repo. Framing, crop and treatment differs per variation.</span></li>
+          <li><strong>D&amp;D level</strong><span>Dialled to <em>60/100</em> — felt, not costumed. The d20, castle and shield remain as easter eggs to Secret Lair and the Quest.</span></li>
+          <li><strong>Pages</strong><span>Home + Our Story + Details are fully redesigned per variation; remaining pages inherit each variation's stylesheet.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider-ornament">❦ ✦ ❦</div>
+    <p class="foot">Josh &amp; Ashley · Aldie Mansion · Nov 13 2026</p>
+  </div>
+</body>
+</html>

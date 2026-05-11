@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery · Josh & Ashley</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/faire.css?v=11">
+</head>
+<body data-screen-label="Gallery">
+  <div class="page-decor" aria-hidden="true"><span class="corner corner--tl"></span><span class="corner corner--tr"></span><span class="corner corner--bl"></span><span class="corner corner--br"></span></div>
+  <span class="vine vine--left" aria-hidden="true"></span><span class="vine vine--right" aria-hidden="true"></span><nav class="nav"><div class="nav__inner"><a href="index.html" class="nav__logo">Josh <em>&</em> Ashley</a><ul class="nav__links"><li><a href="index.html">Home</a></li><li><a href="our-story.html">Our Story</a></li><li><a href="details.html">Details</a></li><li><a href="wedding-party.html">Party</a></li><li><a href="registry.html">Registry</a></li><li><a href="travel.html">Travel</a></li><li><a href="rsvp.html">RSVP</a></li><li><a href="gallery.html" class="is-active">Gallery</a></li><li><a href="faq.html">FAQ</a></li></ul><button class="nav__toggle">Menu</button></div></nav>
+
+  <header class="page-header">
+    <div class="wrap">
+      <span class="tag">Illuminations</span>
+      <h1>The <em>Gallery</em></h1>
+      <p class="eyebrow">A glimpse into our journey together.</p>
+      <span class="divider-orn" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="gallery">
+        <figure class="gallery__item"><img src="images/kiss.jpg" alt="Josh and Ashley kissing"></figure>
+        <figure class="gallery__item"><img src="images/headstogether.JPG" alt="Heads together"></figure>
+        <figure class="gallery__item"><img src="images/Sparklers.jpg" alt="Sparklers"></figure>
+        <figure class="gallery__item"><img src="images/Beachday.jpg" alt="Beach day"></figure>
+        <figure class="gallery__item"><img src="images/Beachday 2.jpg" alt="Beach day"></figure>
+        <figure class="gallery__item"><img src="images/beach sunset.JPG" alt="Beach sunset"></figure>
+        <figure class="gallery__item"><img src="images/Cornfield.JPG" alt="In a cornfield"></figure>
+        <figure class="gallery__item"><img src="images/Ren Faire.JPG" alt="Renaissance Faire"></figure>
+        <figure class="gallery__item"><img src="images/Ren Faire 2.jpg" alt="Renaissance Faire"></figure>
+        <figure class="gallery__item"><img src="images/Candlelit Dinner.JPG" alt="Candlelit dinner"></figure>
+        <figure class="gallery__item"><img src="images/Drinking Beer.JPG" alt="Drinking beer"></figure>
+        <figure class="gallery__item"><img src="images/Friends.jpg" alt="With friends"></figure>
+        <figure class="gallery__item"><img src="images/Germany.JPG" alt="Germany"></figure>
+        <figure class="gallery__item"><img src="images/Airport Greeting.jpg" alt="Airport greeting"></figure>
+        <figure class="gallery__item"><img src="images/The Car.JPG" alt="The car"></figure>
+        <figure class="gallery__item"><img src="images/With Apollo.JPG" alt="With Apollo"></figure>
+        <figure class="gallery__item"><img src="images/Dogfilter.JPG" alt="Dog filter selfie"></figure>
+        <figure class="gallery__item"><img src="images/Playing with kids.JPG" alt="Playing with kids"></figure>
+        <figure class="gallery__item"><img src="images/With Ashley's Family.JPG" alt="With Ashley's family"></figure>
+        <figure class="gallery__item"><img src="images/Yuletide.jpg" alt="Yuletide"></figure>
+        <figure class="gallery__item"><img src="images/Mirror Selfie.jpg" alt="Mirror selfie"></figure>
+        <figure class="gallery__item"><img src="images/Messy Selfie.JPG" alt="Messy selfie"></figure>
+        <figure class="gallery__item"><img src="images/selfie.JPG" alt="Selfie"></figure>
+        <figure class="gallery__item"><img src="images/Selfie2.JPG" alt="Selfie"></figure>
+        <figure class="gallery__item"><img src="images/Ashley Batman.JPG" alt="A hero hidden in plain sight" id="batman-photo" role="button" tabindex="0" style="cursor:pointer;"></figure>
+        <figure class="gallery__item"><img src="images/Josh Batman.jpg" alt="Josh as Batman"></figure>
+        <figure class="gallery__item"><img src="images/Selfie 3.JPG" alt="Selfie"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quest modal -->
+  <div id="quest-modal" style="display:none;position:fixed;inset:0;background:rgba(42,22,8,0.85);z-index:9999;align-items:center;justify-content:center;padding:2rem;">
+    <div style="background:var(--paper-highlight);border:1px solid var(--gold-deep);padding:2.5rem 2rem;max-width:450px;width:100%;text-align:center;position:relative;">
+      <div style="position:absolute;inset:10px;border:1px solid var(--gold-soft);pointer-events:none;"></div>
+      <button id="quest-modal-close" style="position:absolute;top:0.5rem;right:0.9rem;background:none;border:none;font-size:1.5rem;color:var(--ink-soft);cursor:pointer;font-family:var(--serif);">×</button>
+      <p style="font-family:var(--serif);color:var(--rose);font-size:1.2rem;font-style:italic;margin-bottom:0.5rem;position:relative;">⚔ The Gallery Challenges You ⚔</p>
+      <p style="font-family:var(--body);color:var(--ink);font-size:1.05rem;margin-bottom:1.5rem;line-height:1.6;position:relative;">You have found the hero in disguise.<br>Now speak his name to prove your worth.</p>
+      <div style="display:flex;gap:0.5rem;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;">
+        <input type="text" id="quest-answer" placeholder="Name the hero…" autofocus style="padding:0.75rem 1.2rem;border:1px solid var(--gold-deep);background:var(--paper);font-family:var(--serif);font-size:1rem;color:var(--ink);text-align:center;letter-spacing:1px;">
+        <button id="quest-submit" class="btn btn--solid">Submit</button>
+      </div>
+      <p id="quest-error" style="color:var(--rose);font-size:0.9rem;font-style:italic;margin-top:0.8rem;opacity:0;transition:opacity 0.3s;position:relative;">That is not the hero's name. Try again.</p>
+    </div>
+  </div>
+
+  <footer class="footer"><div class="wrap"><p class="footer__names">Josh <em>&</em> Ashley</p><p class="footer__meta">The Thirteenth of November · MMXXVI · Doylestown</p></div></footer>
+  <script>
+    document.querySelector('.nav__toggle')?.addEventListener('click',()=>document.querySelector('.nav__links')?.classList.toggle('is-open'));
+    const bp=document.getElementById('batman-photo'),m=document.getElementById('quest-modal'),mc=document.getElementById('quest-modal-close'),qa=document.getElementById('quest-answer'),qs=document.getElementById('quest-submit'),qe=document.getElementById('quest-error');
+    const openModal=()=>{m.style.display='flex';qa.value='';qa.focus();};
+    bp.addEventListener('click',openModal);
+    bp.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal();}});
+    mc.addEventListener('click',()=>m.style.display='none');
+    m.addEventListener('click',e=>{if(e.target===m)m.style.display='none';});
+    function sq(){const v=qa.value.toLowerCase().trim();if(v==='batman')window.location.href='quest/step2.html';else{qe.style.opacity='1';qa.value='';qa.focus();setTimeout(()=>qe.style.opacity='0',2500);}}
+    qs.addEventListener('click',sq);qa.addEventListener('keydown',e=>{if(e.key==='Enter')sq();});
+  </script>
+</body>
+</html>

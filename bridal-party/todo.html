@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List | Bridal Party Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Medieval Decorative Elements -->
+  <div class="page-border-outer"></div>
+  <div class="page-border-inner"></div>
+  <div class="vine-left"></div>
+  <div class="vine-right"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+  <div class="corner-bl"></div>
+  <div class="corner-br"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">J & A</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Main Site</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="bp-layout">
+    <aside class="bp-sidebar">
+      <h3>Planning Hub</h3>
+      <ul class="bp-sidebar-nav">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="todo.html" class="active">To-Do List</a></li>
+        <li><a href="vendors.html">Vendors</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="beauty.html">Hair & Makeup</a></li>
+        <li><a href="music.html">Music Suggestions</a></li>
+        <li><a href="schedule.html">Weekend Schedule</a></li>
+      </ul>
+    </aside>
+
+    <main class="bp-main">
+      <h1>Wedding To-Do List</h1>
+      <p class="subtitle">Color-coded by who's handling each task</p>
+
+      <!-- Color Key -->
+      <div class="card" style="margin-bottom:2rem;padding:1.5rem;">
+        <h4 style="margin-bottom:0.75rem;color:var(--gold);">Color Key</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+          <span><span class="assignee-dot assignee-bride"></span>Ashley (Bride)</span>
+          <span><span class="assignee-dot assignee-groom"></span>Josh (Groom)</span>
+          <span><span class="assignee-dot assignee-parents-bw"></span>David & Mark</span>
+          <span><span class="assignee-dot assignee-parents-h"></span>Lori & Rob</span>
+          <span><span class="assignee-dot assignee-moh"></span>Emara (MOH)</span>
+          <span><span class="assignee-dot assignee-bestman"></span>Alex (Best Man)</span>
+          <span><span class="assignee-dot assignee-party"></span>Bridal Party</span>
+          <span><span class="assignee-dot assignee-family"></span>Family (All Hands)</span>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="todo-filters">
+        <strong style="color:var(--cream);font-size:0.85rem;margin-right:0.5rem;">Status:</strong>
+        <button class="todo-filter active" data-group="status" data-value="all">All</button>
+        <button class="todo-filter" data-group="status" data-value="Done">Done</button>
+        <button class="todo-filter" data-group="status" data-value="In progress">In Progress</button>
+        <button class="todo-filter" data-group="status" data-value="Not started">Not Started</button>
+      </div>
+
+      <!-- Table -->
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Timeline</th>
+              <th>Status</th>
+              <th>Notes</th>
+              <th>Handled By</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- 10-12 Months -->
+            <tr class="todo-row" data-status="Done" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Set a budget</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>$40,000</td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Set ideal guest count</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>Under 130 guests</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Work on wedding vision</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>Dark Fantasy meets Enchanted Forest - gemstones</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Purchase wedding insurance</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Research and tour venues</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>Aldie Mansion</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Determine wedding party</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>All members confirmed</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Order wedding party gifts</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>Still need to be put together and delivered</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Invite wedding party</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>All members invited</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Finalize venue and date</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>Aldie Mansion, November 13, 2026</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Start booking vendors</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Still need photo, video, entertainment, floral, decor, officiant, housing</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Finalize guest list</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Waiting on list from David & Mark</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Book transportation</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td>David & Mark are handling it</td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Book hotel blocks</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td>David & Mark are handling it</td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Book guest accommodation</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td>David & Mark are handling it</td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Book officiant</td>
+              <td>10-12 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Judge Rice and Judge Sanchez - need contact info</td>
+              <td>Ashley & Josh</td>
+            </tr>
+
+            <!-- 8-9 Months -->
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Plan entertainment</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>Rock-It Entertainment</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Book rentals</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td>Generation Tux</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley, Josh, and Wynn">
+              <td><span class="assignee-dot assignee-party"></span>Wedding website</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>You're looking at it!</td>
+              <td>Ashley, Josh & Wynn</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Work on registry</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Crate & Barrel (IP), Ikea (NS), House $$$, Honeymoon $$$</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Start planning decor</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Enchanted forest, dark fantasy, bringing outside in, dark cool tones</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Book alterations</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Stationery and signage</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Scroll Design - need cardstock store for paper and font</td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Emara and Alex">
+              <td><span class="assignee-dot assignee-moh"></span>Bachelor/ette plans</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>AC Medieval Times, bridesmaid sidequest, groomsmen sidequest, beach weekend in CMP</td>
+              <td>Emara & Alex</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Wedding party attire</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Bridesmaid dress decided, color undecided. Groomsmen entirely undecided</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Shop bridal outfits</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Two dresses found on Etsy</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Finalize vendors &amp; payment plans</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>David & Mark are handling it</td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Lori and Rob">
+              <td><span class="assignee-dot assignee-parents-h"></span>Organize rehearsal dinner</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Coordinate with Lori about location and budget</td>
+              <td>Lori & Rob</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley">
+              <td><span class="assignee-dot assignee-bride"></span>Shop for wedding ring</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Dessert tasting</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Design and send save the dates</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Designed - need to be printed and sent</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Lori and Rob">
+              <td><span class="assignee-dot assignee-parents-h"></span>Book rehearsal dinner location</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td>Lori & Rob are handling it</td>
+              <td>Lori & Rob</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Purchase wedding ring</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Decide on cake/desserts</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Josh">
+              <td><span class="assignee-dot assignee-groom"></span>Groom suit/tux fitting</td>
+              <td>8-9 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Josh</td>
+            </tr>
+
+            <!-- 6-7 Months -->
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley Anna">
+              <td><span class="assignee-dot assignee-bride"></span>Book hair and makeup</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Find out which Hanneman household members need hair/makeup</td>
+              <td>Ashley / Anna</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Start wedding binder</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Purchase wedding jewelry</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Finalize stationery</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Purchase day-of gifts</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Create music lists</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Make photography shot list</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Make videography shot list</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Anna Ashley">
+              <td><span class="assignee-dot assignee-bride"></span>Finalize florals</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Anna / Ashley</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Emara Ashley">
+              <td><span class="assignee-dot assignee-moh"></span>Finalize decor</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Emara / Ashley</td>
+            </tr>
+            <tr class="todo-row" data-status="Done" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Designate ushers/greeters</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--done">Done</span></td>
+              <td>Milo Satinski and Luc Maloney</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="In progress" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Book wedding night stay</td>
+              <td>6-7 months</td>
+              <td><span class="badge badge--progress">In Progress</span></td>
+              <td>Bride & groom would like The Golden Plough Inn</td>
+              <td>David & Mark</td>
+            </tr>
+
+            <!-- 3-5 Months -->
+            <tr class="todo-row" data-status="Not started" data-assignee="family">
+              <td><span class="assignee-dot assignee-family"></span>Send wedding invites</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>All Hands - Family</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley Anna">
+              <td><span class="assignee-dot assignee-bride"></span>Schedule hair/makeup trial</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td>Would like to schedule for 9/21/2026</td>
+              <td>Ashley / Anna</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="family">
+              <td><span class="assignee-dot assignee-family"></span>Plan reception seating</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>All Hands - Family</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Choose guest book</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td>Wishing stones as guest book - need stones and fine-point permanent pens</td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Finalize wedding weekend outfits</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Emara Alex">
+              <td><span class="assignee-dot assignee-moh"></span>Bachelor/ette party</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Emara / Alex</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Start working on vows</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Review with officiant</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Finalize music</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Purchase wedding party gifts</td>
+              <td>3-5 months</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+
+            <!-- 1 Month -->
+            <tr class="todo-row" data-status="Not started" data-assignee="family">
+              <td><span class="assignee-dot assignee-family"></span>Finalize seating plans</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>All Hands - Family</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Create day-of timeline</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Final alterations</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Final vendor payments</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="family">
+              <td><span class="assignee-dot assignee-family"></span>Reach out to all pending RSVPs</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>All Hands - Family</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley">
+              <td><span class="assignee-dot assignee-bride"></span>Pick up wedding ring(s)</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Give headcount to venue</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Schedule self-care</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Apply for marriage license</td>
+              <td>1 month</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+
+            <!-- 2 Weeks -->
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Confirm all RSVPs</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Send timeline to vendors</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="David and Mark">
+              <td><span class="assignee-dot assignee-parents-bw"></span>Confirm details with vendors</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>David & Mark</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Finish vows</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Send timeline to wedding party &amp; parents</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="bridal party">
+              <td><span class="assignee-dot assignee-party"></span>Steam outfits</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>All Hands - Bridal Party</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Pack emergency/day-of kits</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Pack weekend outfits</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley">
+              <td><span class="assignee-dot assignee-bride"></span>Beauty appointments</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley</td>
+            </tr>
+            <tr class="todo-row" data-status="Not started" data-assignee="Ashley and Josh">
+              <td><span class="assignee-dot assignee-bride"></span>Print needed documents</td>
+              <td>2 weeks</td>
+              <td><span class="badge badge--not-started">Not Started</span></td>
+              <td></td>
+              <td>Ashley & Josh</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Responsibilities -->
+      <h2 style="margin-top:3rem;margin-bottom:1rem;">Responsibilities Summary</h2>
+      <div class="card" style="padding:2rem;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>Key Responsibilities</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="assignee-dot assignee-parents-bw"></span><strong>David & Mark</strong></td>
+              <td>Budget, venue docs, wedding insurance, transportation, hotel blocks, guest accommodation, vendor payments, wedding night stay</td>
+            </tr>
+            <tr>
+              <td><span class="assignee-dot assignee-parents-h"></span><strong>Lori & Rob</strong></td>
+              <td>Rehearsal dinner planning and booking</td>
+            </tr>
+            <tr>
+              <td><span class="assignee-dot assignee-moh"></span><strong>Emara (MOH)</strong></td>
+              <td>Bachelor/ette planning, decor shopping</td>
+            </tr>
+            <tr>
+              <td><strong>Anna</strong></td>
+              <td>Beauty treatments coordination</td>
+            </tr>
+            <tr>
+              <td><strong>Aislinn</strong></td>
+              <td>Florals coordination</td>
+            </tr>
+            <tr>
+              <td><span class="assignee-dot assignee-bestman"></span><strong>Alex (Best Man)</strong></td>
+              <td>Bachelor/ette planning, groomsmen attire/presentation</td>
+            </tr>
+            <tr>
+              <td><strong>Wynn</strong></td>
+              <td>Building the wedding website</td>
+            </tr>
+            <tr>
+              <td><strong>Kevin</strong></td>
+              <td>Designing and printing the cake topper</td>
+            </tr>
+            <tr>
+              <td><strong>Olivia, Chase, George, Alan</strong></td>
+              <td>All hands on deck activities</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <button class="bp-sidebar-toggle" aria-label="Toggle sidebar">&#x2630;</button>
+
+  <div class="medieval-icons">
+    <img src="../images/sword.svg" alt="" class="icon-sword" aria-hidden="true">
+    <a href="../secret-lair.html" style="display:inline-flex"><img src="../images/castle.svg" alt="" class="icon-castle" aria-hidden="true"></a>
+    <a href="../quest/gate.html" style="display:inline-flex"><img src="../images/shield-heart.svg" alt="" class="icon-shield" aria-hidden="true"></a>
+    <img src="../images/dragon.svg" alt="" class="icon-dragon" aria-hidden="true">
+    <img src="../images/sword.svg" alt="" class="icon-sword" aria-hidden="true" style="transform:scaleX(-1)">
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

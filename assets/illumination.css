@@ -1,0 +1,274 @@
+/* ====================================================
+   ILLUMINATION · Illuminated manuscript effects layer
+   Loaded AFTER faire.css.  Pair with illumination.js.
+   ==================================================== */
+
+/* ---------- Illuminated Drop Cap ---------- */
+.illum-cap {
+  position: relative;
+  margin-right: 0.6rem;
+  margin-bottom: 0.15rem;
+}
+.illum-cap .illum-cap__box {
+  float: left;
+  width: 5.4em;
+  height: 5.4em;
+  margin: 0.1em 0.5em 0 0;
+  shape-outside: inset(0);
+  position: relative;
+  background:
+    radial-gradient(ellipse at 30% 25%, #d4a017 0%, #a07524 45%, #6b4418 100%);
+  border: 2px solid #5a3e15;
+  box-shadow:
+    inset 0 0 16px rgba(90,50,10,0.55),
+    inset 0 2px 0 rgba(248,235,199,0.25),
+    0 2px 6px rgba(44,24,16,0.35);
+}
+.illum-cap .illum-cap__box::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(248, 235, 199, 0.55);
+  pointer-events: none;
+}
+.illum-cap .illum-cap__box::after {
+  /* subtle filigree corners via radial gradients */
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(248,235,199,0.35) 0 3px, transparent 4px),
+    radial-gradient(circle at 92% 8%, rgba(248,235,199,0.35) 0 3px, transparent 4px),
+    radial-gradient(circle at 8% 92%, rgba(248,235,199,0.35) 0 3px, transparent 4px),
+    radial-gradient(circle at 92% 92%, rgba(248,235,199,0.35) 0 3px, transparent 4px);
+  pointer-events: none;
+}
+.illum-cap .illum-cap__letter {
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 3.8em;
+  line-height: 1;
+  color: #f8ebc7;
+  text-shadow:
+    0 2px 0 rgba(90,50,10,0.6),
+    0 -1px 0 rgba(255,230,180,0.4);
+  z-index: 2;
+}
+
+/* ---------- Rubrication ---------- */
+.rub {
+  color: var(--rose);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+.rub-name { color: var(--rose); font-style: italic; font-weight: 500; }
+.pilcrow::before {
+  content: '¶ ';
+  color: var(--rose);
+  font-weight: 600;
+  margin-right: 0.15em;
+}
+
+/* ---------- Gold-leaf shimmer text ---------- */
+.gold-leaf {
+  background: linear-gradient(
+    100deg,
+    #8a6418 0%,
+    #c89b3a 25%,
+    #f3d97a 45%,
+    #fff2c4 50%,
+    #f3d97a 55%,
+    #c89b3a 75%,
+    #8a6418 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: goldShimmer 7s linear infinite;
+  text-shadow: 0 1px 0 rgba(90, 60, 10, 0.25);
+}
+@keyframes goldShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ---------- Torn / deckle parchment edges ---------- */
+.deckle {
+  position: relative;
+  --deckle-color: rgba(248, 235, 199, 0.65);
+  background: var(--deckle-color);
+  border: none;
+  padding: 2.25rem 2rem;
+  /* SVG deckle on all four edges via mask */
+  -webkit-mask:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' preserveAspectRatio='none'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='0.025' numOctaves='2' seed='3'/><feDisplacementMap in='SourceGraphic' scale='8'/></filter><rect x='8' y='8' width='584' height='584' fill='black' filter='url(%23r)'/></svg>") center/100% 100% no-repeat;
+          mask:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' preserveAspectRatio='none'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='0.025' numOctaves='2' seed='3'/><feDisplacementMap in='SourceGraphic' scale='8'/></filter><rect x='8' y='8' width='584' height='584' fill='black' filter='url(%23r)'/></svg>") center/100% 100% no-repeat;
+  filter: drop-shadow(0 4px 10px rgba(44, 24, 8, 0.25));
+}
+.deckle::before {
+  /* inner gold border lining (inset, following deckle) */
+  content: '';
+  position: absolute; inset: 18px;
+  border: 1px solid var(--gold-soft);
+  pointer-events: none;
+}
+
+/* ---------- Aged corners & ink blots ---------- */
+.aged {
+  position: relative;
+}
+.aged::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-image:
+    /* burn/stain top-left */
+    radial-gradient(ellipse 120px 90px at 3% 2%, rgba(90,50,10,0.35) 0%, rgba(90,50,10,0.15) 40%, transparent 72%),
+    /* burn bottom-right */
+    radial-gradient(ellipse 140px 100px at 97% 98%, rgba(90,50,10,0.32) 0%, rgba(90,50,10,0.12) 40%, transparent 72%),
+    /* ink blot */
+    radial-gradient(circle 8px at 88% 14%, rgba(42,22,8,0.75) 0%, rgba(42,22,8,0.4) 60%, transparent 100%),
+    radial-gradient(circle 5px at 12% 82%, rgba(42,22,8,0.6) 0%, rgba(42,22,8,0.3) 60%, transparent 100%),
+    /* water ring */
+    radial-gradient(circle 40px at 70% 76%, transparent 35px, rgba(90,50,10,0.18) 36px, rgba(90,50,10,0.08) 40px, transparent 44px);
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+/* ---------- Hover-reveal hidden marginalia ---------- */
+.hidden-doodle {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(6px) rotate(var(--r, -6deg));
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 1px 0 rgba(90,50,10,0.3));
+}
+.doodle-trigger:hover .hidden-doodle,
+.doodle-trigger:focus-within .hidden-doodle {
+  opacity: 0.85;
+  transform: translateY(0) rotate(var(--r, -6deg));
+}
+
+/* ---------- Candle / quill cursor ---------- */
+.candle-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px; height: 48px;
+  pointer-events: none;
+  z-index: 99;
+  transition: opacity 0.25s;
+  opacity: 0;
+  /* Hot spot = tip of flame (center x, ~6px from top) */
+  margin-left: -20px;
+  margin-top: -6px;
+}
+.candle-cursor.visible { opacity: 1; }
+.candle-cursor__flame {
+  position: absolute;
+  left: 50%; top: 0;
+  width: 14px; height: 22px;
+  transform: translate(-50%, -12px);
+  background: radial-gradient(ellipse at 50% 80%, #fff2c4 0%, #f3d97a 30%, #f4a12a 60%, #a84040 95%, transparent 100%);
+  border-radius: 50% 50% 45% 45% / 70% 70% 30% 30%;
+  filter: blur(0.4px);
+  animation: flameFlicker 0.6s ease-in-out infinite alternate;
+  transform-origin: 50% 100%;
+}
+.candle-cursor__glow {
+  position: absolute;
+  left: 50%; top: -2px;
+  width: 80px; height: 80px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(244, 161, 42, 0.35) 0%, rgba(244, 161, 42, 0.12) 30%, transparent 70%);
+  pointer-events: none;
+}
+.candle-cursor__body {
+  position: absolute;
+  left: 50%; top: 18px;
+  width: 12px; height: 22px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #f4e0a0 0%, #c89b3a 100%);
+  border-radius: 2px 2px 1px 1px;
+  box-shadow: inset -2px 0 2px rgba(90,50,10,0.25);
+}
+.candle-cursor__base {
+  position: absolute;
+  left: 50%; top: 40px;
+  width: 22px; height: 5px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #8a6418, #5a3e15);
+  border-radius: 2px;
+}
+@keyframes flameFlicker {
+  0%   { transform: translate(-50%, -12px) scale(1, 1) skewX(-2deg); }
+  50%  { transform: translate(-52%, -13px) scale(1.05, 0.96) skewX(1deg); }
+  100% { transform: translate(-48%, -11px) scale(0.96, 1.04) skewX(-1deg); }
+}
+
+/* Hide native cursor when candle is on, for text/non-interactive areas */
+body.candle-on { cursor: none; }
+body.candle-on a,
+body.candle-on button,
+body.candle-on input,
+body.candle-on textarea,
+body.candle-on [role="button"] { cursor: pointer; }
+
+/* ---------- Page-turn transition ---------- */
+.page-turn-overlay {
+  position: fixed; inset: 0;
+  background:
+    linear-gradient(110deg, rgba(44,24,8,0.0) 40%, rgba(44,24,8,0.35) 50%, rgba(44,24,8,0.0) 60%),
+    linear-gradient(90deg, var(--paper-3) 0%, var(--paper-2) 50%, var(--paper-3) 100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.55s cubic-bezier(.65,.05,.36,1), opacity 0.4s;
+}
+.page-turn-overlay.turning {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- Scroll-growing side vines ----------
+   Reveal the vine from top via clip-path as the user scrolls. */
+.vine.grow {
+  clip-path: inset(0 0 calc((1 - var(--grow, 1)) * 100%) 0);
+  -webkit-clip-path: inset(0 0 calc((1 - var(--grow, 1)) * 100%) 0);
+}
+
+/* Marginal annotation (reader's notes) */
+.marginal-note {
+  position: absolute;
+  left: calc(var(--border-margin) + 150px);
+  max-width: 160px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--rose);
+  opacity: 0.65;
+  line-height: 1.35;
+  text-align: right;
+  transform: rotate(-3deg);
+  pointer-events: none;
+  display: none; /* desktop only */
+}
+@media (min-width: 1280px) {
+  .marginal-note { display: block; }
+}
+.marginal-note::before {
+  content: '☙';
+  display: block;
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 160" fill="none">
+  <!-- Medieval Sword -->
+  <g opacity="0.35">
+    <!-- Blade -->
+    <path d="M30 5 L36 105 L30 115 L24 105 Z" fill="#b8860b" stroke="#8b1a1a" stroke-width="0.8"/>
+    <!-- Fuller (blade groove) -->
+    <path d="M30 12 L30 95" stroke="rgba(184, 134, 11, 0.5)" stroke-width="2.5"/>
+    <!-- Blade edge highlight -->
+    <path d="M27 8 L24 105" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
+    <!-- Cross guard -->
+    <rect x="8" y="110" width="44" height="7" rx="2" fill="#b8860b" stroke="#8b1a1a" stroke-width="0.8"/>
+    <!-- Cross guard gems -->
+    <circle cx="12" cy="113.5" r="2.5" fill="#8b1a1a"/>
+    <circle cx="48" cy="113.5" r="2.5" fill="#8b1a1a"/>
+    <!-- Cross guard decorative ends -->
+    <circle cx="8" cy="113.5" r="3" fill="none" stroke="#8b1a1a" stroke-width="0.5"/>
+    <circle cx="52" cy="113.5" r="3" fill="none" stroke="#8b1a1a" stroke-width="0.5"/>
+    <!-- Grip -->
+    <rect x="24" y="117" width="12" height="25" rx="2" fill="#5c3a1e" stroke="#8b1a1a" stroke-width="0.5"/>
+    <!-- Grip wrapping -->
+    <path d="M24 121 L36 125 M24 127 L36 131 M24 133 L36 137" stroke="#b8860b" stroke-width="1"/>
+    <!-- Pommel -->
+    <circle cx="30" cy="148" r="7" fill="#b8860b" stroke="#8b1a1a" stroke-width="0.8"/>
+    <circle cx="30" cy="148" r="3.5" fill="#8b1a1a"/>
+    <circle cx="30" cy="148" r="1.5" fill="#b8860b"/>
+  </g>
+</svg>

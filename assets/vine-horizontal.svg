@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 64" width="600" height="64" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <defs>
+    <radialGradient id="roseH" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#753861"></stop>
+      <stop offset="60%" stop-color="#753861"></stop>
+      <stop offset="100%" stop-color="#753861"></stop>
+    </radialGradient>
+    <linearGradient id="leafH" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7a8a3a"></stop>
+      <stop offset="100%" stop-color="#4a5a20"></stop>
+    </linearGradient>
+    <linearGradient id="leafGoldH" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c89b3a"></stop>
+      <stop offset="100%" stop-color="#8a6418"></stop>
+    </linearGradient>
+    <symbol id="roseH1" viewBox="-14 -14 28 28">
+      <circle r="12" fill="url(#roseH)"></circle>
+      <path d="M-8,-2 C-4,-8 4,-8 8,-2 C6,4 -6,4 -8,-2 Z" fill="#753861"></path>
+      <circle r="2.5" fill="#753861"></circle>
+    </symbol>
+    <symbol id="leafHsym" viewBox="-14 -6 28 12">
+      <path d="M-12,0 C-8,-6 8,-6 12,0 C8,6 -8,6 -12,0 Z" fill="url(#leafH)"></path>
+      <path d="M-10,0 L10,0" stroke="#2a3a10" stroke-width="0.6" fill="none"></path>
+    </symbol>
+    <symbol id="leafGoldHsym" viewBox="-12 -5 24 10">
+      <path d="M-10,0 C-6,-5 6,-5 10,0 C6,5 -6,5 -10,0 Z" fill="url(#leafGoldH)"></path>
+    </symbol>
+  </defs>
+  
+  <path d="M0,32 C 50,12 100,52 150,32 C 200,12 250,52 300,32 C 350,12 400,52 450,32 C 500,12 550,52 600,32" fill="none" stroke="#5a3e15" stroke-width="2.5" stroke-linecap="round" opacity="0.85"></path>
+  <path d="M0,28 C 60,48 120,8 180,28 C 240,48 300,8 360,28 C 420,48 480,8 540,28 C 580,40 600,28 600,28" fill="none" stroke="#6b4a1e" stroke-width="1.2" opacity="0.65"></path>
+  
+  <path d="M60,32 C 64,20 72,18 74,26 C 76,32 68,32 68,28" fill="none" stroke="#6b4a1e" stroke-width="1" opacity="0.7"></path>
+  <path d="M210,32 C 214,44 222,46 224,38 C 226,32 218,32 218,36" fill="none" stroke="#6b4a1e" stroke-width="1" opacity="0.7"></path>
+  <path d="M360,32 C 364,20 372,18 374,26 C 376,32 368,32 368,28" fill="none" stroke="#6b4a1e" stroke-width="1" opacity="0.7"></path>
+  <path d="M510,32 C 514,44 522,46 524,38 C 526,32 518,32 518,36" fill="none" stroke="#6b4a1e" stroke-width="1" opacity="0.7"></path>
+  
+  <use href="#leafHsym" x="30" y="22" transform="rotate(-20 30 22)"></use>
+  <use href="#leafGoldHsym" x="85" y="44" transform="rotate(25 85 44)"></use>
+  <use href="#leafHsym" x="135" y="22" transform="rotate(20 135 22)"></use>
+  <use href="#leafHsym" x="185" y="44" transform="rotate(-25 185 44)"></use>
+  <use href="#leafGoldHsym" x="235" y="22" transform="rotate(30 235 22)"></use>
+  <use href="#leafHsym" x="285" y="44" transform="rotate(-20 285 44)"></use>
+  <use href="#leafHsym" x="330" y="22" transform="rotate(-20 330 22)"></use>
+  <use href="#leafGoldHsym" x="385" y="44" transform="rotate(25 385 44)"></use>
+  <use href="#leafHsym" x="435" y="22" transform="rotate(20 435 22)"></use>
+  <use href="#leafHsym" x="485" y="44" transform="rotate(-25 485 44)"></use>
+  <use href="#leafGoldHsym" x="535" y="22" transform="rotate(30 535 22)"></use>
+  <use href="#leafHsym" x="580" y="44" transform="rotate(-20 580 44)"></use>
+  
+  <use href="#roseH1" x="110" y="32" width="22" height="22"></use>
+  <use href="#roseH1" x="260" y="32" width="22" height="22"></use>
+  <use href="#roseH1" x="410" y="32" width="22" height="22"></use>
+  <use href="#roseH1" x="560" y="32" width="22" height="22"></use>
+</svg>

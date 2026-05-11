@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" preserveAspectRatio="none">
+  <!-- Scroll curl at bottom -->
+  <defs>
+    <linearGradient id="scrollGradB" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c4a86a" stop-opacity="0.5"/>
+      <stop offset="40%" stop-color="#d4b87a" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f2e6ce" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 40 C0 40, 0 32, 5 25 C10 18, 20 12, 40 10 L1160 10 C1180 12, 1190 18, 1195 25 C1200 32, 1200 40, 1200 40 Z"
+        fill="url(#scrollGradB)"/>
+  <path d="M5 25 C10 18, 20 12, 40 10 L1160 10 C1180 12, 1190 18, 1195 25"
+        stroke="rgba(184, 134, 11, 0.3)" stroke-width="1" fill="none"/>
+  <!-- Subtle curl shadow -->
+  <ellipse cx="600" cy="8" rx="580" ry="4" fill="rgba(100, 70, 30, 0.08)"/>
+</svg>

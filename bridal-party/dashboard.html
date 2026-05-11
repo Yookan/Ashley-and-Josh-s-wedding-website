@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Bridal Party Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Medieval Decorative Elements -->
+  <div class="page-border-outer"></div>
+  <div class="page-border-inner"></div>
+  <div class="vine-left"></div>
+  <div class="vine-right"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+  <div class="corner-bl"></div>
+  <div class="corner-br"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">J & A</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Main Site</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="bp-layout">
+    <!-- Sidebar -->
+    <aside class="bp-sidebar">
+      <h3>Planning Hub</h3>
+      <ul class="bp-sidebar-nav">
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="todo.html">To-Do List</a></li>
+        <li><a href="vendors.html">Vendors</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="beauty.html">Hair & Makeup</a></li>
+        <li><a href="music.html">Music Suggestions</a></li>
+        <li><a href="schedule.html">Weekend Schedule</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="bp-main">
+      <h1>Welcome, Team!</h1>
+      <p class="subtitle">Josh & Ashley's Wedding Planning Dashboard</p>
+
+      <!-- Countdown & Stats -->
+      <div class="dash-grid">
+        <div class="dash-card">
+          <h4>Wedding Day</h4>
+          <p class="big-number" id="dash-countdown"></p>
+          <p class="detail">November 13, 2026</p>
+        </div>
+        <div class="dash-card">
+          <h4>Tasks Done</h4>
+          <p class="big-number">15</p>
+          <p class="detail">out of 56 total</p>
+          <div class="progress-bar" style="margin-top:0.75rem;">
+            <div class="progress-bar-fill progress-bar-fill--green" style="width:27%;"></div>
+          </div>
+        </div>
+        <div class="dash-card">
+          <h4>In Progress</h4>
+          <p class="big-number">16</p>
+          <p class="detail">tasks being worked on</p>
+          <div class="progress-bar" style="margin-top:0.75rem;">
+            <div class="progress-bar-fill progress-bar-fill--gold" style="width:29%;"></div>
+          </div>
+        </div>
+        <div class="dash-card">
+          <h4>Venue</h4>
+          <p style="font-family:var(--font-heading);font-size:1.4rem;color:var(--cream);margin-top:0.25rem;">Aldie Mansion</p>
+          <p class="detail">Doylestown, PA</p>
+        </div>
+      </div>
+
+      <!-- Thank You Note -->
+      <div class="card" style="margin:2rem 0;padding:2rem;border-color:rgba(201,168,76,0.2);">
+        <h3 style="color:var(--gold);margin-bottom:0.75rem;">A Note From Josh & Ashley</h3>
+        <p class="text-dim" style="line-height:1.8;">
+          We would just like to quickly thank you in advance for all your help with planning
+          our dream wedding! This wouldn't be possible without you! Use this hub to stay
+          up-to-date on everything wedding-related. If you have any questions, don't hesitate
+          to reach out.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <h3 style="margin-bottom:0.5rem;">Quick Links</h3>
+      <div class="quick-links">
+        <a href="todo.html" class="quick-link">
+          <span class="ql-icon">&#x2611;</span>
+          To-Do List
+        </a>
+        <a href="vendors.html" class="quick-link">
+          <span class="ql-icon">&#x1f4cb;</span>
+          Vendors
+        </a>
+        <a href="contacts.html" class="quick-link">
+          <span class="ql-icon">&#x1f4de;</span>
+          Contacts
+        </a>
+        <a href="beauty.html" class="quick-link">
+          <span class="ql-icon">&#x1f484;</span>
+          Hair & Makeup
+        </a>
+        <a href="music.html" class="quick-link">
+          <span class="ql-icon">&#x1f3b5;</span>
+          Music
+        </a>
+        <a href="schedule.html" class="quick-link">
+          <span class="ql-icon">&#x1f4c5;</span>
+          Weekend Schedule
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <button class="bp-sidebar-toggle" aria-label="Toggle sidebar">&#x2630;</button>
+
+  <div class="medieval-icons">
+    <img src="../images/sword.svg" alt="" class="icon-sword" aria-hidden="true">
+    <a href="../secret-lair.html" style="display:inline-flex"><img src="../images/castle.svg" alt="" class="icon-castle" aria-hidden="true"></a>
+    <a href="../quest/gate.html" style="display:inline-flex"><img src="../images/shield-heart.svg" alt="" class="icon-shield" aria-hidden="true"></a>
+    <img src="../images/dragon.svg" alt="" class="icon-dragon" aria-hidden="true">
+    <img src="../images/sword.svg" alt="" class="icon-sword" aria-hidden="true" style="transform:scaleX(-1)">
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Dashboard countdown (days only)
+    const el = document.getElementById('dash-countdown');
+    if (el) {
+      const diff = new Date('2026-11-13').getTime() - Date.now();
+      const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+      el.textContent = days + ' days';
+    }
+  </script>
+</body>
+</html>
