@@ -47,39 +47,16 @@
         <figure class="gallery__item"><img src="images/Messy Selfie.JPG" alt="Messy selfie"></figure>
         <figure class="gallery__item"><img src="images/selfie.JPG" alt="Selfie"></figure>
         <figure class="gallery__item"><img src="images/Selfie2.JPG" alt="Selfie"></figure>
-        <figure class="gallery__item"><img src="images/Ashley Batman.JPG" alt="A hero hidden in plain sight" id="batman-photo" role="button" tabindex="0" style="cursor:pointer;"></figure>
+        <figure class="gallery__item"><img src="images/Ashley Batman.JPG" alt="Ashley as Batman"></figure>
         <figure class="gallery__item"><img src="images/Josh Batman.jpg" alt="Josh as Batman"></figure>
         <figure class="gallery__item"><img src="images/Selfie 3.JPG" alt="Selfie"></figure>
       </div>
     </div>
   </section>
 
-  <!-- Quest modal -->
-  <div id="quest-modal" style="display:none;position:fixed;inset:0;background:rgba(42,22,8,0.85);z-index:9999;align-items:center;justify-content:center;padding:2rem;">
-    <div style="background:var(--paper-highlight);border:1px solid var(--gold-deep);padding:2.5rem 2rem;max-width:450px;width:100%;text-align:center;position:relative;">
-      <div style="position:absolute;inset:10px;border:1px solid var(--gold-soft);pointer-events:none;"></div>
-      <button id="quest-modal-close" style="position:absolute;top:0.5rem;right:0.9rem;background:none;border:none;font-size:1.5rem;color:var(--ink-soft);cursor:pointer;font-family:var(--serif);">×</button>
-      <p style="font-family:var(--serif);color:var(--rose);font-size:1.2rem;font-style:italic;margin-bottom:0.5rem;position:relative;">⚔ The Gallery Challenges You ⚔</p>
-      <p style="font-family:var(--body);color:var(--ink);font-size:1.05rem;margin-bottom:1.5rem;line-height:1.6;position:relative;">You have found the hero in disguise.<br>Now speak his name to prove your worth.</p>
-      <div style="display:flex;gap:0.5rem;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;">
-        <input type="text" id="quest-answer" placeholder="Name the hero…" autofocus style="padding:0.75rem 1.2rem;border:1px solid var(--gold-deep);background:var(--paper);font-family:var(--serif);font-size:1rem;color:var(--ink);text-align:center;letter-spacing:1px;">
-        <button id="quest-submit" class="btn btn--solid">Submit</button>
-      </div>
-      <p id="quest-error" style="color:var(--rose);font-size:0.9rem;font-style:italic;margin-top:0.8rem;opacity:0;transition:opacity 0.3s;position:relative;">That is not the hero's name. Try again.</p>
-    </div>
-  </div>
-
   <footer class="footer"><div class="wrap"><p class="footer__names">Josh <em>&</em> Ashley</p><p class="footer__meta">The Thirteenth of November · MMXXVI · Doylestown</p></div></footer>
   <script>
     document.querySelector('.nav__toggle')?.addEventListener('click',()=>document.querySelector('.nav__links')?.classList.toggle('is-open'));
-    const bp=document.getElementById('batman-photo'),m=document.getElementById('quest-modal'),mc=document.getElementById('quest-modal-close'),qa=document.getElementById('quest-answer'),qs=document.getElementById('quest-submit'),qe=document.getElementById('quest-error');
-    const openModal=()=>{m.style.display='flex';qa.value='';qa.focus();};
-    bp.addEventListener('click',openModal);
-    bp.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal();}});
-    mc.addEventListener('click',()=>m.style.display='none');
-    m.addEventListener('click',e=>{if(e.target===m)m.style.display='none';});
-    function sq(){const v=qa.value.toLowerCase().trim();if(v==='batman')window.location.href='quest/step2.html';else{qe.style.opacity='1';qa.value='';qa.focus();setTimeout(()=>qe.style.opacity='0',2500);}}
-    qs.addEventListener('click',sq);qa.addEventListener('keydown',e=>{if(e.key==='Enter')sq();});
   </script>
 </body>
 </html>
